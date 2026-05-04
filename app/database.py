@@ -1,17 +1,21 @@
-import os
-from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
-load_dotenv()
-
-DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_URL = "postgresql://postgres.vpoyikoqjdjcgxzzgusl:datascienceetitt@aws-0-eu-west-1.pooler.supabase.com:5432/postgres?sslmode=require"
 
 engine = create_engine(
     DATABASE_URL,
-    pool_pre_ping=True,
-    connect_args={"sslmode": "require"}
+    pool_pre_ping=True
 )
+
+SessionLocal = sessionmaker(
+    autocommit=False,
+    autoflush=False,
+    bind=engine
+)
+
+Base = declarative_base()
+
 
 def get_db():
     db = SessionLocal()
@@ -19,7 +23,3 @@ def get_db():
         yield db
     finally:
         db.close()
-
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
-Base = declarative_base()
