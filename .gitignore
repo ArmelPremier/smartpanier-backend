@@ -1,13 +1,5 @@
-# Environnement virtuel
-venv/
 .venv/
-
-# Python
+venv/
 __pycache__/
 *.pyc
-
-# Variables d'environnement
 .env
-
-# OS
-.DS_Store
