@@ -7,10 +7,36 @@ from app.schemas import (
     OptimisationRequest,
     OptimisationResponse,
     RepartitionMagasinResponse,
-    ProduitOptimiseResponse
+    ProduitOptimiseResponse,
+    ScenarioResponse
 )
 
 router = APIRouter(prefix="", tags=["Optimisation"])
+
+@router.get("/scenarios", response_model=list[ScenarioResponse])
+def get_scenarios():
+    return [
+        {
+            "code": "economique",
+            "nom": "Économique",
+            "description": "Minimiser le coût total en choisissant les offres les moins chères"
+        },
+        {
+            "code": "mono_magasin",
+            "nom": "Un seul magasin",
+            "description": "Acheter tous les produits dans un seul magasin"
+        },
+        {
+            "code": "equilibre",
+            "nom": "Équilibré",
+            "description": "Compromis entre prix et nombre de magasins"
+        },
+        {
+            "code": "qualite",
+            "nom": "Qualité",
+            "description": "Favoriser certains magasins préférés"
+        }
+    ]
 
 
 @router.post("/optimiser", response_model=OptimisationResponse)
@@ -316,6 +342,8 @@ def optimiser(data: OptimisationRequest, db: Session = Depends(get_db)):
             economies=round(total_classique - total, 2),
             repartition=repartition_list
         )
+
+        
     # =========================
     # ⭐ SCENARIO QUALITE
     # =========================

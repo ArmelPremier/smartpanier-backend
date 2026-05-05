@@ -55,6 +55,10 @@ class Offre(BaseModel):
         "from_attributes": True
     }
 
+class ScenarioResponse(BaseModel):
+    code: str
+    nom: str
+    description: str
 
 # =====================================================
 # 🧠 NOUVEAU FLUX SMARTPANIER → POST /optimiser
