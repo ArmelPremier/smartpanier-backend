@@ -78,7 +78,7 @@ class Offre(Base):
 
     stock = Column(Integer, default=0)
 
-    quantite = Column(String, nullable=False)  # ex: "1kg", "500g", "Pack 6"
+    quantite = Column(String, nullable=False)  
 
     id_produit = Column(Integer, ForeignKey("produits.id_produit"))
     id_magasin = Column(Integer, ForeignKey("magasins.id_magasin"))
@@ -115,3 +115,11 @@ class PanierOptimiseItem(Base):
     panier = relationship("PanierOptimise", back_populates="items")
     produit = relationship("Produit")
     magasin = relationship("Magasin")
+
+class HistoriquePrix(Base):
+    __tablename__ = "historique_prix"
+
+    id_historique = Column(Integer, primary_key=True, index=True)
+    id_offre = Column(Integer, ForeignKey("offres.id_offre"))
+    prix = Column(Float, nullable=False)
+    date = Column(DateTime, default=datetime.utcnow)

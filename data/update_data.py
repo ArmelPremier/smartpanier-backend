@@ -1,27 +1,31 @@
-import random
+from random import uniform
 from app.database import SessionLocal
-from app.models import Offre
+from app.models import Offre, HistoriquePrix
 
-def update_offres():
-    db = SessionLocal()
+db = SessionLocal()
 
-    offres = db.query(Offre).all()
+offres = db.query(Offre).all()
 
-    for offre in offres:
-        # 🔄 Variation prix (-10% à +10%)
-        variation = random.uniform(-0.1, 0.1)
-        offre.prix_offre = round(offre.prix_offre * (1 + variation), 2)
+for offre in offres:
 
-        # 📦 Stock aléatoire
-        offre.stock = random.randint(0, 100)
+    ancien_prix = offre.prix_offre
 
-        # 🎯 Promo aléatoire
-        offre.promotion = random.choice([True, False])
+    variation = uniform(-2, 2)
 
-    db.commit()
-    db.close()
+    nouveau_prix = max(1, round(ancien_prix + variation, 2))
 
-    print("✅ Données mises à jour avec succès")
+    offre.prix_offre = nouveau_prix
 
-if __name__ == "__main__":
-    update_offres()
+    historique = HistoriquePrix(
+        id_offre=offre.id_offre,
+        prix=nouveau_prix
+    )
+
+    db.add(historique)
+
+    print(f"{offre.id_offre} : {ancien_prix} -> {nouveau_prix}")
+
+db.commit()
+db.close()
+
+print("✅ Mise à jour terminée")
