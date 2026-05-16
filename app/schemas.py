@@ -1,6 +1,8 @@
 from pydantic import BaseModel
 from typing import List, Optional
 
+from app.utils.security import get_current_user
+
 
 # =========================
 # 👤 AUTH
@@ -24,6 +26,8 @@ class UserLogin(BaseModel):
 class ProduitBase(BaseModel):
     nom_produit: str
     categorie_produit: str
+    marque: Optional[str] = None
+    qualite_score: Optional[float] = 5
 
 
 class ProduitCreate(ProduitBase):
@@ -42,7 +46,7 @@ class ProduitResponse(ProduitBase):
 # 💰 OFFRE
 # =========================
 
-class Offre(BaseModel):
+class OffreResponse(BaseModel):
     id_offre: int
     prix_offre: float
     promotion: bool
@@ -55,13 +59,19 @@ class Offre(BaseModel):
         "from_attributes": True
     }
 
+
+# =========================
+# 🎯 SCÉNARIOS
+# =========================
+
 class ScenarioResponse(BaseModel):
     code: str
     nom: str
     description: str
 
+
 # =====================================================
-# 🧠 NOUVEAU FLUX SMARTPANIER → POST /optimiser
+# 🧠 SMARTPANIER → POST /optimiser
 # =====================================================
 
 # ---------- INPUT ----------
@@ -76,7 +86,7 @@ class OptimisationRequest(BaseModel):
     scenario: str
     produits: List[OptimisationProduitInput]
 
-    magasins_preferes: list[int] = []  # ex: [1, 2]
+    magasins_preferes: list[int] = []
 
 
 # ---------- OUTPUT ----------
@@ -84,6 +94,9 @@ class OptimisationRequest(BaseModel):
 class ProduitOptimiseResponse(BaseModel):
     id_produit: int
     nom: str
+    marque: Optional[str] = None
+    qualite_score: Optional[float] = None
+
     quantite: int
     prix_unitaire: float
     sous_total: float
@@ -102,12 +115,13 @@ class OptimisationResponse(BaseModel):
 
 
 # =========================
-# (ancien panier - optionnel)
+# 🛒 PANIER OPTIMISÉ
 # =========================
 
 class PanierOptimiseItem(BaseModel):
     produit: str
     magasin: Optional[str]
+
     prix: float
     quantite: int
     total: float
@@ -115,6 +129,16 @@ class PanierOptimiseItem(BaseModel):
 
 class PanierOptimiseResponse(BaseModel):
     items: List[PanierOptimiseItem]
+
     total_optimise: float
     total_classique: float
     economie: float
+
+# =========================
+# 🔐 CHANGE PASSWORD
+# =========================
+
+class ChangePasswordRequest(BaseModel):
+    email: str
+    ancien_motdepasse: str
+    nouveau_motdepasse: str

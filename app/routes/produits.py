@@ -16,9 +16,11 @@ router = APIRouter(prefix="/produits", tags=["Produits"])
 @router.post("/", response_model=ProduitResponse)
 def create_produit(produit: ProduitCreate, db: Session = Depends(get_db)):
     new_produit = Produit(
-        nom_produit=produit.nom_produit,
-        categorie_produit=produit.categorie_produit
-    )
+    nom_produit=produit.nom_produit,
+    categorie_produit=produit.categorie_produit,
+    marque=produit.marque,
+    qualite_score=produit.qualite_score
+)
 
     db.add(new_produit)
     db.commit()

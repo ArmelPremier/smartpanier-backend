@@ -50,8 +50,14 @@ class Produit(Base):
     __tablename__ = "produits"
 
     id_produit = Column(Integer, primary_key=True, index=True)
+
     nom_produit = Column(String, nullable=False)
+
     categorie_produit = Column(String, nullable=False)
+
+    marque = Column(String, nullable=True)
+
+    qualite_score = Column(Float, default=5)
 
     offres = relationship("Offre", back_populates="produit")
 

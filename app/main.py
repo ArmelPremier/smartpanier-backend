@@ -12,12 +12,12 @@ app = FastAPI(
 )
 
 # 🔹 Routes
-from app.routes import produits, auth, offres, panier, optimisation
+from app.routes import produits, auth, offres, optimisation
 
 app.include_router(produits.router)
 app.include_router(auth.router)
 app.include_router(offres.router)
-app.include_router(panier.router)
+
 app.include_router(optimisation.router)
 
 # =========================
