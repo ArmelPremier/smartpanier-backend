@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 
 from app.database import get_db
 from app.models import Utilisateur
+
 from app.schemas import (
     UserRegister,
     UserLogin,
@@ -12,7 +13,9 @@ from app.schemas import (
 from app.utils.security import (
     hash_password,
     verify_password,
-    create_token
+    create_token,
+    get_current_user,
+    oauth2_scheme
 )
 
 router = APIRouter(
@@ -111,6 +114,21 @@ def login(
             "nom": db_user.nom_utilisateur,
             "email": db_user.email_utilisateur
         }
+    }
+
+
+# =========================
+# 👤 CURRENT USER
+# =========================
+@router.get("/me")
+def get_me(
+    current_user = Depends(get_current_user)
+):
+
+    return {
+        "id": current_user.id_utilisateur,
+        "nom": current_user.nom_utilisateur,
+        "email": current_user.email_utilisateur
     }
 
 
