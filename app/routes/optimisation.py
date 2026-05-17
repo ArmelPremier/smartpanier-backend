@@ -10,6 +10,9 @@ from app.schemas import (
     ProduitOptimiseResponse,
     ScenarioResponse
 )
+from app.services.recommendation_service import trouver_alternative
+
+
 
 router = APIRouter(prefix="", tags=["Optimisation"])
 
@@ -606,6 +609,16 @@ def optimiser(data: OptimisationRequest, db: Session = Depends(get_db)):
                 continue
 
             total += sous_total
+
+            alternative = None
+
+            if meilleure_offre.prix_offre > 50:
+
+                alternative = trouver_alternative(
+                    db,
+                    produit,
+                    meilleure_offre.prix_offre
+                )
 
             if magasin.nom_magasin not in repartition:
                 repartition[magasin.nom_magasin] = {

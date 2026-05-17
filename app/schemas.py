@@ -2,6 +2,7 @@ from pydantic import BaseModel
 from typing import List, Optional
 
 from app.utils.security import get_current_user
+from app.schemas import OffreResponse
 
 
 # =========================
@@ -100,6 +101,9 @@ class ProduitOptimiseResponse(BaseModel):
     quantite: int
     prix_unitaire: float
     sous_total: float
+    alternative=alternative
+
+    alternative: Optional[AlternativeProduitResponse] = None
 
 
 class RepartitionMagasinResponse(BaseModel):
@@ -142,3 +146,9 @@ class ChangePasswordRequest(BaseModel):
     email: str
     ancien_motdepasse: str
     nouveau_motdepasse: str
+
+class AlternativeProduitResponse(BaseModel):
+    id_produit: int
+    nom: str
+    marque: Optional[str] = None
+    prix: float
