@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 
 from app.database import get_db
 from app.models import Produit, Offre, Magasin
+
 from app.schemas import (
     OptimisationRequest,
     OptimisationResponse,
@@ -10,647 +11,559 @@ from app.schemas import (
     ProduitOptimiseResponse,
     ScenarioResponse
 )
-from app.services.recommendation_service import trouver_alternative
+
+router = APIRouter(
+    prefix="",
+    tags=["Optimisation"]
+)
+
+# =====================================================
+# 🔥 HELPERS
+# =====================================================
+
+def get_produit(db, id_produit):
+    return db.query(Produit).filter(
+        Produit.id_produit == id_produit
+    ).first()
 
 
+def get_magasin(db, id_magasin):
+    return db.query(Magasin).filter(
+        Magasin.id_magasin == id_magasin
+    ).first()
 
-router = APIRouter(prefix="", tags=["Optimisation"])
 
-@router.get("/scenarios", response_model=list[ScenarioResponse])
+def get_offres(db, id_produit, quantite):
+
+    return db.query(Offre).filter(
+        Offre.id_produit == id_produit,
+        Offre.stock >= quantite
+    ).all()
+
+
+def build_sous_total(offre, quantite):
+    return offre.prix_offre * quantite
+
+
+def ajouter_produit_repartition(
+    repartition,
+    magasin_nom,
+    produit_response,
+    sous_total
+):
+
+    if magasin_nom not in repartition:
+        repartition[magasin_nom] = {
+            "produits": [],
+            "sous_total_magasin": 0
+        }
+
+    repartition[magasin_nom]["produits"].append(
+        produit_response
+    )
+
+    repartition[magasin_nom][
+        "sous_total_magasin"
+    ] += sous_total
+
+
+# =====================================================
+# 📋 SCENARIOS DISPONIBLES
+# =====================================================
+
+@router.get(
+    "/scenarios",
+    response_model=list[ScenarioResponse]
+)
 def get_scenarios():
+
     return [
+
         {
-            "code": "economique",
-            "nom": "Économique",
-            "description": "Minimiser le coût total en choisissant les offres les moins chères"
+            "code": "prix_min",
+            "nom": "Prix minimum",
+            "description":
+            "Minimiser le coût total du panier"
         },
+
         {
-            "code": "mono_magasin",
-            "nom": "Un seul magasin",
-            "description": "Acheter tous les produits dans un seul magasin"
+            "code": "mono_2_magasins",
+            "nom": "1 à 2 magasins",
+            "description":
+            "Réduire le nombre de magasins"
         },
-        {
-            "code": "equilibre",
-            "nom": "Équilibré",
-            "description": "Compromis entre prix et nombre de magasins"
-        },
-        {
-            "code": "qualite",
-            "nom": "Qualité",
-            "description": "Favoriser certains magasins préférés"
-        },
+
         {
             "code": "budget_strict",
             "nom": "Budget strict",
-            "description": "Respect strict du budget avec priorisation des produits essentiels"
+            "description":
+            "Respecter strictement le budget"
         },
+
         {
             "code": "recommande",
             "nom": "Panier recommandé",
-            "description": "Recommandation basée sur qualité/prix"
-        },]
+            "description":
+            "Meilleur rapport qualité/prix"
+        }
+    ]
 
 
-@router.post("/optimiser", response_model=OptimisationResponse)
-def optimiser(data: OptimisationRequest, db: Session = Depends(get_db)):
+# =====================================================
+# 🟢 SCENARIO A — PRIX MINIMUM
+# =====================================================
 
-    if data.scenario not in ["economique","mono_magasin","qualite","equilibre","budget_strict","recommande"]:
-        raise HTTPException(status_code=400, detail="Scenario invalide")
+def scenario_prix_min(data, db):
 
-    budget = data.budget
+    total = 0
+    total_initial = 0
 
-    # =========================
-    # 🔥 SCENARIO ECONOMIQUE
-    # =========================
-    if data.scenario == "economique":
+    repartition = {}
 
-        repartition = {}
-        total = 0
-        total_classique = 0
+    for item in data.produits:
 
-        for item in data.produits:
-
-            produit = db.query(Produit).filter(
-                Produit.id_produit == item.id_produit
-            ).first()
-
-            if not produit:
-                raise HTTPException(
-                    status_code=404,
-                    detail=f"Produit {item.id_produit} introuvable"
-                )
-
-            offres = db.query(Offre).filter(
-                Offre.id_produit == produit.id_produit
-            ).all()
-
-            if not offres:
-                continue
-
-            # 🔥 filtrer par stock
-            offres_disponibles = [
-                o for o in offres if o.stock >= item.quantite
-            ]
-
-            if not offres_disponibles:
-                continue
-
-            # ✅ meilleur prix
-            meilleure_offre = min(
-                offres_disponibles,
-                key=lambda o: o.prix_offre
-            )
-
-            # ⚠️ pire prix (pour économie)
-            pire_offre = max(
-                offres_disponibles,
-                key=lambda o: o.prix_offre
-            )
-
-            magasin = db.query(Magasin).filter(
-                Magasin.id_magasin == meilleure_offre.id_magasin
-            ).first()
-
-            if not magasin:
-                continue
-
-            sous_total = meilleure_offre.prix_offre * item.quantite
-            sous_total_classique = pire_offre.prix_offre * item.quantite
-
-            # 🚨 CONTRÔLE BUDGET (IMPORTANT)
-            if total + sous_total > budget:
-                raise HTTPException(
-                    status_code=400,
-                    detail=f"Budget dépassé ❌ (budget={budget} MAD)"
-                )
-
-            total += sous_total
-            total_classique += sous_total_classique
-
-            # 🔥 regroupement par magasin
-            if magasin.nom_magasin not in repartition:
-                repartition[magasin.nom_magasin] = {
-                    "produits": [],
-                    "sous_total_magasin": 0
-                }
-
-            repartition[magasin.nom_magasin]["produits"].append(
-                ProduitOptimiseResponse(
-                    id_produit=produit.id_produit,
-                    nom=produit.nom_produit,
-                    quantite=item.quantite,
-                    prix_unitaire=meilleure_offre.prix_offre,
-                    sous_total=sous_total
-                )
-            )
-
-            repartition[magasin.nom_magasin]["sous_total_magasin"] += sous_total
-
-        repartition_list = [
-            RepartitionMagasinResponse(
-                magasin=nom_magasin,
-                produits=data_magasin["produits"],
-                sous_total_magasin=round(data_magasin["sous_total_magasin"], 2)
-            )
-            for nom_magasin, data_magasin in repartition.items()
-        ]
-
-        return OptimisationResponse(
-            total=round(total, 2),
-            economies=round(total_classique - total, 2),
-            repartition=repartition_list
+        produit = get_produit(
+            db,
+            item.id_produit
         )
 
-    # =========================
-    # 🏪 SCENARIO MONO MAGASIN
-    # =========================
-    elif data.scenario == "mono_magasin":
+        if not produit:
+            continue
 
-        magasins = db.query(Magasin).all()
-        meilleur_total = float("inf")
-        meilleure_repartition = None
+        offres = get_offres(
+            db,
+            item.id_produit,
+            item.quantite
+        )
 
-        for magasin in magasins:
+        if not offres:
+            continue
 
-            total_magasin = 0
-            produits_magasin = []
-            possible = True
+        meilleure_offre = min(
+            offres,
+            key=lambda o: o.prix_offre
+        )
 
-            for item in data.produits:
+        pire_offre = max(
+            offres,
+            key=lambda o: o.prix_offre
+        )
 
-                offre = db.query(Offre).filter(
-                    Offre.id_produit == item.id_produit,
-                    Offre.id_magasin == magasin.id_magasin,
-                    Offre.stock >= item.quantite
-                ).first()
+        sous_total = build_sous_total(
+            meilleure_offre,
+            item.quantite
+        )
 
-                if not offre:
-                    possible = False
-                    break
+        sous_total_initial = build_sous_total(
+            pire_offre,
+            item.quantite
+        )
 
-                produit = db.query(Produit).filter(
-                    Produit.id_produit == item.id_produit
-                ).first()
-
-                sous_total = offre.prix_offre * item.quantite
-
-                # 🚨 CONTRÔLE BUDGET
-                if total_magasin + sous_total > budget:
-                    possible = False
-                    break
-
-                total_magasin += sous_total
-
-                produits_magasin.append(
-                    ProduitOptimiseResponse(
-                        id_produit=produit.id_produit,
-                        nom=produit.nom_produit,
-                        quantite=item.quantite,
-                        prix_unitaire=offre.prix_offre,
-                        sous_total=sous_total
-                    )
-                )
-
-            if possible and total_magasin < meilleur_total:
-                meilleur_total = total_magasin
-                meilleure_repartition = RepartitionMagasinResponse(
-                    magasin=magasin.nom_magasin,
-                    produits=produits_magasin,
-                    sous_total_magasin=round(total_magasin, 2)
-                )
-
-        if not meilleure_repartition:
+        if total + sous_total > data.budget:
             raise HTTPException(
                 status_code=400,
-                detail="Aucun magasin ne respecte le budget ou le stock"
+                detail="Budget dépassé"
             )
 
-        return OptimisationResponse(
-            total=round(meilleur_total, 2),
-            economies=0,
-            repartition=[meilleure_repartition]
+        total += sous_total
+        total_initial += sous_total_initial
+
+        magasin = get_magasin(
+            db,
+            meilleure_offre.id_magasin
         )
 
-        # =========================
-    # ⚖️ SCENARIO EQUILIBRE
-    # =========================
-    elif data.scenario == "equilibre":
+        produit_response = ProduitOptimiseResponse(
+            id_produit=produit.id_produit,
+            nom=produit.nom_produit,
+            marque=produit.marque,
+            qualite_score=produit.qualite_score,
+            quantite=item.quantite,
+            prix_unitaire=meilleure_offre.prix_offre,
+            sous_total=sous_total
+        )
+
+        ajouter_produit_repartition(
+            repartition,
+            magasin.nom_magasin,
+            produit_response,
+            sous_total
+        )
+
+    return total, total_initial, repartition
+
+
+# =====================================================
+# 🟡 SCENARIO B — 1 OU 2 MAGASINS
+# =====================================================
+
+def scenario_1_2_magasins(data, db):
+
+    magasins = db.query(Magasin).all()
+
+    meilleur_total = float("inf")
+
+    meilleure_repartition = None
+
+    meilleur_total_initial = 0
+
+    for magasin in magasins:
+
+        total = 0
+        total_initial = 0
 
         repartition = {}
-        total = 0
-        total_classique = 0
 
-        magasins_utilises = set()
+        possible = True
 
         for item in data.produits:
 
-            produit = db.query(Produit).filter(
-                Produit.id_produit == item.id_produit
-            ).first()
+            produit = get_produit(
+                db,
+                item.id_produit
+            )
 
             if not produit:
-                raise HTTPException(
-                    status_code=404,
-                    detail=f"Produit {item.id_produit} introuvable"
-                )
+                possible = False
+                break
 
-            offres = db.query(Offre).filter(
-                Offre.id_produit == produit.id_produit
-            ).all()
-
-            if not offres:
-                continue
-
-            # 🔥 filtrer stock
-            offres_disponibles = [
-                o for o in offres if o.stock >= item.quantite
-            ]
-
-            if not offres_disponibles:
-                continue
-
-            meilleure_offre = None
-            meilleur_score = float("inf")
-
-            for offre in offres_disponibles:
-
-                magasin = db.query(Magasin).filter(
-                    Magasin.id_magasin == offre.id_magasin
-                ).first()
-
-                if not magasin:
-                    continue
-
-                prix = offre.prix_offre
-
-                # ⚖️ pénalité si nouveau magasin
-                penalite_magasin = 5 if magasin.nom_magasin not in magasins_utilises else 0
-
-                # 🎯 bonus promo
-                bonus_promo = 2 if offre.promotion else 0
-
-                score = prix + penalite_magasin - bonus_promo
-
-                if score < meilleur_score:
-                    meilleur_score = score
-                    meilleure_offre = offre
-
-            if not meilleure_offre:
-                continue
-
-            magasin = db.query(Magasin).filter(
-                Magasin.id_magasin == meilleure_offre.id_magasin
+            offre = db.query(Offre).filter(
+                Offre.id_produit == item.id_produit,
+                Offre.id_magasin == magasin.id_magasin,
+                Offre.stock >= item.quantite
             ).first()
 
-            sous_total = meilleure_offre.prix_offre * item.quantite
+            if not offre:
+                possible = False
+                break
 
-            # 🚨 budget check
-            if total + sous_total > data.budget:
-                raise HTTPException(
-                    status_code=400,
-                    detail="Budget dépassé en scénario équilibré"
-                )
+            toutes_offres = get_offres(
+                db,
+                item.id_produit,
+                item.quantite
+            )
 
-            total += sous_total
-
-            # ⚠️ classique = pire prix
             pire_offre = max(
-                offres_disponibles,
-                key=lambda o: o.prix_offre
-            )
-            total_classique += pire_offre.prix_offre * item.quantite
-
-            magasins_utilises.add(magasin.nom_magasin)
-
-            if magasin.nom_magasin not in repartition:
-                repartition[magasin.nom_magasin] = {
-                    "produits": [],
-                    "sous_total_magasin": 0
-                }
-
-            repartition[magasin.nom_magasin]["produits"].append(
-                ProduitOptimiseResponse(
-                    id_produit=produit.id_produit,
-                    nom=produit.nom_produit,
-                    quantite=item.quantite,
-                    prix_unitaire=meilleure_offre.prix_offre,
-                    sous_total=sous_total
-                )
-            )
-
-            repartition[magasin.nom_magasin]["sous_total_magasin"] += sous_total
-
-        repartition_list = [
-            RepartitionMagasinResponse(
-                magasin=nom,
-                produits=data_magasin["produits"],
-                sous_total_magasin=round(data_magasin["sous_total_magasin"], 2)
-            )
-            for nom, data_magasin in repartition.items()
-        ]
-
-        return OptimisationResponse(
-            total=round(total, 2),
-            economies=round(total_classique - total, 2),
-            repartition=repartition_list
-        )
-
-        
-    # =========================
-    # ⭐ SCENARIO QUALITE
-    # =========================
-    elif data.scenario == "qualite":
-
-        repartition = {}
-        total = 0
-        total_classique = 0
-
-        for item in data.produits:
-
-            produit = db.query(Produit).filter(
-                Produit.id_produit == item.id_produit
-            ).first()
-
-            if not produit:
-                raise HTTPException(
-                    status_code=404,
-                    detail=f"Produit {item.id_produit} introuvable"
-                )
-
-            offres = db.query(Offre).filter(
-                Offre.id_produit == produit.id_produit
-            ).all()
-
-            if not offres:
-                continue
-
-            # 🔥 filtrer stock
-            offres_disponibles = [
-                o for o in offres if o.stock >= item.quantite
-            ]
-
-            if not offres_disponibles:
-                continue
-
-            # ⭐ priorité aux magasins préférés
-            offres_preferes = [
-                o for o in offres_disponibles
-                if o.id_magasin in data.magasins_preferes
-            ]
-
-            # 👉 si dispo dans préférés → on prend le moins cher parmi eux
-            if offres_preferes:
-                meilleure_offre = min(
-                    offres_preferes,
-                    key=lambda o: o.prix_offre
-                )
-            else:
-                # fallback → moins cher global
-                meilleure_offre = min(
-                    offres_disponibles,
-                    key=lambda o: o.prix_offre
-                )
-
-            # ⚠️ pire prix pour économie
-            pire_offre = max(
-                offres_disponibles,
+                toutes_offres,
                 key=lambda o: o.prix_offre
             )
 
-            magasin = db.query(Magasin).filter(
-                Magasin.id_magasin == meilleure_offre.id_magasin
-            ).first()
+            sous_total = build_sous_total(
+                offre,
+                item.quantite
+            )
 
-            sous_total = meilleure_offre.prix_offre * item.quantite
-            sous_total_classique = pire_offre.prix_offre * item.quantite
+            sous_total_initial = build_sous_total(
+                pire_offre,
+                item.quantite
+            )
 
-            # 🚨 budget check
             if total + sous_total > data.budget:
-                raise HTTPException(
-                    status_code=400,
-                    detail="Budget dépassé en scénario qualité"
-                )
+                possible = False
+                break
 
             total += sous_total
-            total_classique += sous_total_classique
+            total_initial += sous_total_initial
 
-            if magasin.nom_magasin not in repartition:
-                repartition[magasin.nom_magasin] = {
-                    "produits": [],
-                    "sous_total_magasin": 0
-                }
-
-            repartition[magasin.nom_magasin]["produits"].append(
-                ProduitOptimiseResponse(
-                    id_produit=produit.id_produit,
-                    nom=produit.nom_produit,
-                    quantite=item.quantite,
-                    prix_unitaire=meilleure_offre.prix_offre,
-                    sous_total=sous_total
-                )
+            produit_response = ProduitOptimiseResponse(
+                id_produit=produit.id_produit,
+                nom=produit.nom_produit,
+                marque=produit.marque,
+                qualite_score=produit.qualite_score,
+                quantite=item.quantite,
+                prix_unitaire=offre.prix_offre,
+                sous_total=sous_total
             )
 
-            repartition[magasin.nom_magasin]["sous_total_magasin"] += sous_total
-
-        repartition_list = [
-            RepartitionMagasinResponse(
-                magasin=nom,
-                produits=data_magasin["produits"],
-                sous_total_magasin=round(data_magasin["sous_total_magasin"], 2)
+            ajouter_produit_repartition(
+                repartition,
+                magasin.nom_magasin,
+                produit_response,
+                sous_total
             )
-            for nom, data_magasin in repartition.items()
-        ]
 
-        return OptimisationResponse(
-            total=round(total, 2),
-            economies=round(total_classique - total, 2),
-            repartition=repartition_list
+        if possible and total < meilleur_total:
+
+            meilleur_total = total
+            meilleur_total_initial = total_initial
+
+            meilleure_repartition = repartition
+
+    if not meilleure_repartition:
+
+        raise HTTPException(
+            status_code=400,
+            detail="Aucun magasin compatible"
         )
-        # =========================
-    # 💸 SCENARIO BUDGET STRICT
-    # =========================
+
+    return (
+        meilleur_total,
+        meilleur_total_initial,
+        meilleure_repartition
+    )
+
+
+# =====================================================
+# 🟠 SCENARIO C — BUDGET STRICT
+# =====================================================
+
+def scenario_budget_strict(data, db):
+
+    produits_tries = []
+
+    for item in data.produits:
+
+        offres = get_offres(
+            db,
+            item.id_produit,
+            item.quantite
+        )
+
+        if not offres:
+            continue
+
+        meilleure_offre = min(
+            offres,
+            key=lambda o: o.prix_offre
+        )
+
+        produits_tries.append({
+            "item": item,
+            "offre": meilleure_offre,
+            "prix":
+            meilleure_offre.prix_offre * item.quantite
+        })
+
+    produits_tries.sort(
+        key=lambda x: x["prix"]
+    )
+
+    total = 0
+    total_initial = 0
+
+    repartition = {}
+
+    for p in produits_tries:
+
+        item = p["item"]
+        offre = p["offre"]
+
+        sous_total = p["prix"]
+
+        if total + sous_total > data.budget:
+            continue
+
+        produit = get_produit(
+            db,
+            item.id_produit
+        )
+
+        magasin = get_magasin(
+            db,
+            offre.id_magasin
+        )
+
+        toutes_offres = get_offres(
+            db,
+            item.id_produit,
+            item.quantite
+        )
+
+        pire_offre = max(
+            toutes_offres,
+            key=lambda o: o.prix_offre
+        )
+
+        sous_total_initial = build_sous_total(
+            pire_offre,
+            item.quantite
+        )
+
+        total += sous_total
+        total_initial += sous_total_initial
+
+        produit_response = ProduitOptimiseResponse(
+            id_produit=produit.id_produit,
+            nom=produit.nom_produit,
+            marque=produit.marque,
+            qualite_score=produit.qualite_score,
+            quantite=item.quantite,
+            prix_unitaire=offre.prix_offre,
+            sous_total=sous_total
+        )
+
+        ajouter_produit_repartition(
+            repartition,
+            magasin.nom_magasin,
+            produit_response,
+            sous_total
+        )
+
+    if total == 0:
+
+        raise HTTPException(
+            status_code=400,
+            detail="Budget insuffisant"
+        )
+
+    return total, total_initial, repartition
+
+
+# =====================================================
+# 🔵 SCENARIO D — PANIER RECOMMANDE
+# =====================================================
+
+def scenario_recommande(data, db):
+
+    total = 0
+    total_initial = 0
+
+    repartition = {}
+
+    for item in data.produits:
+
+        produit = get_produit(
+            db,
+            item.id_produit
+        )
+
+        if not produit:
+            continue
+
+        offres = get_offres(
+            db,
+            item.id_produit,
+            item.quantite
+        )
+
+        if not offres:
+            continue
+
+        meilleure_offre = max(
+            offres,
+            key=lambda o:
+            produit.qualite_score /
+            max(o.prix_offre, 0.1)
+        )
+
+        pire_offre = max(
+            offres,
+            key=lambda o: o.prix_offre
+        )
+
+        sous_total = build_sous_total(
+            meilleure_offre,
+            item.quantite
+        )
+
+        sous_total_initial = build_sous_total(
+            pire_offre,
+            item.quantite
+        )
+
+        if total + sous_total > data.budget:
+            continue
+
+        total += sous_total
+        total_initial += sous_total_initial
+
+        magasin = get_magasin(
+            db,
+            meilleure_offre.id_magasin
+        )
+
+        produit_response = ProduitOptimiseResponse(
+            id_produit=produit.id_produit,
+            nom=produit.nom_produit,
+            marque=produit.marque,
+            qualite_score=produit.qualite_score,
+            quantite=item.quantite,
+            prix_unitaire=meilleure_offre.prix_offre,
+            sous_total=sous_total
+        )
+
+        ajouter_produit_repartition(
+            repartition,
+            magasin.nom_magasin,
+            produit_response,
+            sous_total
+        )
+
+    return total, total_initial, repartition
+
+
+# =====================================================
+# 🚀 ROUTE PRINCIPALE
+# =====================================================
+
+@router.post(
+    "/optimiser",
+    response_model=OptimisationResponse
+)
+def optimiser(
+    data: OptimisationRequest,
+    db: Session = Depends(get_db)
+):
+
+    if data.scenario == "prix_min":
+
+        total, total_initial, repartition = (
+            scenario_prix_min(data, db)
+        )
+
+    elif data.scenario == "mono_2_magasins":
+
+        total, total_initial, repartition = (
+            scenario_1_2_magasins(data, db)
+        )
+
     elif data.scenario == "budget_strict":
 
-        repartition = {}
-        total = 0
-
-        produits_tries = []
-
-        # 🔥 Trier produits par prix minimum
-        for item in data.produits:
-
-            offres = db.query(Offre).filter(
-                Offre.id_produit == item.id_produit,
-                Offre.stock >= item.quantite
-            ).all()
-
-            if not offres:
-                continue
-
-            meilleure_offre = min(
-                offres,
-                key=lambda o: o.prix_offre
-            )
-
-            produits_tries.append({
-                "item": item,
-                "offre": meilleure_offre,
-                "prix": meilleure_offre.prix_offre
-            })
-
-        produits_tries.sort(key=lambda x: x["prix"] * x["item"].quantite)
-
-        produits_acceptes = []
-
-        for p in produits_tries:
-
-            sous_total = p["prix"] * p["item"].quantite
-
-            if total + sous_total <= data.budget:
-                total += sous_total
-                produits_acceptes.append(p)
-
-        if not produits_acceptes:
-            raise HTTPException(
-                status_code=400,
-                detail="Budget insuffisant"
-            )
-
-        for p in produits_acceptes:
-
-            produit = db.query(Produit).filter(
-                Produit.id_produit == p["item"].id_produit
-            ).first()
-
-            magasin = db.query(Magasin).filter(
-                Magasin.id_magasin == p["offre"].id_magasin
-            ).first()
-
-            sous_total = p["offre"].prix_offre * p["item"].quantite
-
-            if magasin.nom_magasin not in repartition:
-                repartition[magasin.nom_magasin] = {
-                    "produits": [],
-                    "sous_total_magasin": 0
-                }
-
-            repartition[magasin.nom_magasin]["produits"].append(
-                ProduitOptimiseResponse(
-                    id_produit=produit.id_produit,
-                    nom=produit.nom_produit,
-                    quantite=p["item"].quantite,
-                    prix_unitaire=p["offre"].prix_offre,
-                    sous_total=sous_total
-                )
-            )
-
-            repartition[magasin.nom_magasin]["sous_total_magasin"] += sous_total
-
-        repartition_list = [
-            RepartitionMagasinResponse(
-                magasin=nom,
-                produits=data_magasin["produits"],
-                sous_total_magasin=round(
-                    data_magasin["sous_total_magasin"], 2
-                )
-            )
-            for nom, data_magasin in repartition.items()
-        ]
-
-        return OptimisationResponse(
-            total=round(total, 2),
-            economies=0,
-            repartition=repartition_list
+        total, total_initial, repartition = (
+            scenario_budget_strict(data, db)
         )
-    
-        # =========================
-    # ⭐ SCENARIO RECOMMANDE
-    # =========================
+
     elif data.scenario == "recommande":
 
-        repartition = {}
-        total = 0
-
-        for item in data.produits:
-
-            produit = db.query(Produit).filter(
-                Produit.id_produit == item.id_produit
-            ).first()
-
-            if not produit:
-                continue
-
-            offres = db.query(Offre).filter(
-                Offre.id_produit == item.id_produit,
-                Offre.stock >= item.quantite
-            ).all()
-
-            if not offres:
-                continue
-
-            meilleure_offre = None
-            meilleur_score = -1
-
-            for offre in offres:
-
-                score = (
-                    produit.qualite_score / max(offre.prix_offre, 0.1)
-                )
-
-                if score > meilleur_score:
-                    meilleur_score = score
-                    meilleure_offre = offre
-
-            magasin = meilleure_offre.magasin
-
-            sous_total = meilleure_offre.prix_offre * item.quantite
-
-            if total + sous_total > data.budget:
-                continue
-
-            total += sous_total
-
-            alternative = None
-
-            if meilleure_offre.prix_offre > 50:
-
-                alternative = trouver_alternative(
-                    db,
-                    produit,
-                    meilleure_offre.prix_offre
-                )
-
-            if magasin.nom_magasin not in repartition:
-                repartition[magasin.nom_magasin] = {
-                    "produits": [],
-                    "sous_total_magasin": 0
-                }
-
-            repartition[magasin.nom_magasin]["produits"].append(
-                ProduitOptimiseResponse(
-                    id_produit=produit.id_produit,
-                    nom=f"{produit.nom_produit} ({produit.marque})",
-                    quantite=item.quantite,
-                    prix_unitaire=meilleure_offre.prix_offre,
-                    sous_total=sous_total
-                )
-            )
-
-            repartition[magasin.nom_magasin]["sous_total_magasin"] += sous_total
-
-        repartition_list = [
-            RepartitionMagasinResponse(
-                magasin=nom,
-                produits=data_magasin["produits"],
-                sous_total_magasin=round(
-                    data_magasin["sous_total_magasin"], 2
-                )
-            )
-            for nom, data_magasin in repartition.items()
-        ]
-
-        return OptimisationResponse(
-            total=round(total, 2),
-            economies=0,
-            repartition=repartition_list
+        total, total_initial, repartition = (
+            scenario_recommande(data, db)
         )
+
+    else:
+
+        raise HTTPException(
+            status_code=400,
+            detail="Scenario invalide"
+        )
+
+    repartition_list = [
+
+        RepartitionMagasinResponse(
+            magasin=nom_magasin,
+            produits=data_magasin["produits"],
+            sous_total_magasin=round(
+                data_magasin["sous_total_magasin"],
+                2
+            )
+        )
+
+        for nom_magasin, data_magasin
+        in repartition.items()
+    ]
+
+    return OptimisationResponse(
+
+        total=round(total, 2),
+
+        total_initial=round(
+            total_initial,
+            2
+        ),
+
+        economies=round(
+            total_initial - total,
+            2
+        ),
+
+        repartition=repartition_list
+    )

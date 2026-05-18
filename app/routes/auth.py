@@ -14,8 +14,7 @@ from app.utils.security import (
     hash_password,
     verify_password,
     create_token,
-    get_current_user,
-    oauth2_scheme
+    get_current_user
 )
 
 router = APIRouter(
