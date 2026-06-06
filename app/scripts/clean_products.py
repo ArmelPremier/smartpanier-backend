@@ -10,35 +10,22 @@ import hashlib
 # =====================================================
 
 KNOWN_BRANDS = {
-    "fancy",
-    "ducros",
-    "serano",
-    "sfassif",
-    "hala",
-    "star",
-    "zaytouni",
-    "olinia",
-    "panzani",
-    "jessy's",
-    "jessys",
-    "bjorg",
-    "tipiak",
-    "sundari",
-    "cigala",
-    "ebly",
-    "denia",
-    "rosana",
-    "cerebos",
-    "gemignani",
-    "al badr",
-    "alesto",
-    "goldy",
-    "delcielo",
-    "pikarome",
-    "mido",
-    "divella",
-    "alhora",
-    "ja"
+    # Marques MyMarket
+    "fancy", "ducros", "serano", "sfassif", "hala", "zaytouni", "olinia",
+    "panzani", "jessys", "bjorg", "tipiak", "sundari", "cigala", "ebly",
+    "denia", "rosana", "cerebos", "gemignani", "alesto", "ja",
+    "madila", "sifa", "carle", "joly", "gaya", "ayala", "harmony",
+    "barilla", "uncle", "bens", "caprice", "baleine", "beros",
+    # Marques MarketPro
+    "alhora", "borges", "lesieur", "kania", "cevital", "camelia",
+    "lio", "louza", "dessaux", "ideal", "fritys", "frity",
+    "delcielo", "goldy", "pikarome", "mido", "divella",
+    "al badr", "alesto", "star",
+    # Marques thon MarketPro
+    "tamima", "caly", "chellah",
+    # Autres marques MarketPro
+    "savora", "oncle", "siof", "bangor", "aicha",
+    "kasbah", "perla", "eurogold", "leduc",
 }
 
 BRAND_PATTERNS = [
@@ -48,20 +35,32 @@ BRAND_PATTERNS = [
 
 
 STOPWORDS = {
-    "de","du","des","d",
-    "et","au","aux",
-    "la","le","les",
-    "en","avec","pour","sur",
-
-    "boite",
-    "bouteille",
-    "verre",
-    "chef",
-    "courant",
-    "gout",
-    "kg",
-    "grillees",
-    "grillee"
+    # Particules françaises
+    "de","du","des","d","et","au","aux","la","le","les","en","avec","pour","sur","a",
+    # Contenant / packaging
+    "boite","bouteille","verre","sachet","pot","bidon","brique","pack","kg",
+    # Mots génériques déjà dans KNOWN_BRANDS ou inutiles
+    "chef","courant","gout","grillees","grillee","conserve",
+    # Méthodes de préparation
+    "grille","sale","seche","fume","moulu","moulee","entier","entiere",
+    "taille","coupe","hache","hachee","emiette","emince",
+    "tranche",           # champignons tranchés
+    "filet",             # thon filet → thon (après CORRECTIONS: filets→filet)
+    "bonite",            # thon caly bonite → thon (type de thon)
+    # Descripteurs de qualité
+    "vierge","extra","pur","pure","naturel","naturelle","premium",
+    "bio","frais","fraiche","special","select","royal","gold",
+    "surchoix",          # huile de table surchoix → huile de table
+    # Types/sous-types de pâtes
+    "rigate",            # penne rigate → penne
+    "mini",              # mini penne / mini farfalle → penne / farfalle
+    # Types de riz
+    "risotto",           # riz risotto → riz
+    "rouge",             # riz cigala rouge → riz (couleur packaging)
+    "etuve",             # riz étuvé → riz
+    # Autres
+    "grains","grain","dore","doree","secs","sec",
+    "vegetale",          # huile végétale (descripteur générique)
 }
 
 
@@ -74,6 +73,12 @@ CORRECTIONS = {
     "grillee": "grille",
     "sechees": "seche",
     "sechee": "seche",
+    # Pluriels/accords → forme canonique (pour STOPWORDS)
+    "tranches": "tranche",
+    "tranchees": "tranche",
+    "tranchee": "tranche",
+    "rouges": "rouge",
+    "filets": "filet",
 }
 
 
@@ -185,9 +190,9 @@ def normalize_code(name):
 
     name = clean_text(name)
 
-    # suppression marques
-    for brand in KNOWN_BRANDS:
-        name = name.replace(brand, " ")
+    # Word-boundary matching
+    for _, pattern in BRAND_PATTERNS:
+        name = pattern.sub(" ", name)
 
     # suppression fractions
     name = re.sub(r"\b1/2\s*(l|kg)\b", " ", name)
@@ -312,24 +317,25 @@ def normalize_name(name):
 
     name = clean_text(name)
 
-    for brand in KNOWN_BRANDS:
-        name = name.replace(brand, " ")
+    # Word-boundary matching (évite "hala" dans "halabi", etc.)
+    for _, pattern in BRAND_PATTERNS:
+        name = pattern.sub(" ", name)
 
     name = QUANTITY_PATTERN.sub(" ", name)
-
     name = re.sub(r"[^a-z0-9 ]", " ", name)
 
     words = []
 
     for w in name.split():
-
         if w in STOPWORDS:
             continue
-
+        if len(w) < 2:
+            continue
+        if any(c.isdigit() for c in w):
+            # Filtre les codes numériques : "ndeg5", "4", "3x", "100"
+            continue
         w = SINGULAR_MAP.get(w, w)
-
         words.append(w)
-
         words = list(dict.fromkeys(words))
 
     return " ".join(words)
@@ -337,11 +343,12 @@ def normalize_name(name):
 
 def generate_product_key(product):
 
-    text = (
-        product["nom_normalise"]
-        + "_"
-        + str(product["categorie_canonique"])
-    )
+    nom = product["nom_normalise"]
+    if not nom:
+        # Fallback si la normalisation a tout supprimé (ex: "Cigala Rouge 5KG")
+        nom = clean_text(product["nom"])[:40]
+
+    text = nom + "_" + str(product["categorie_canonique"])
 
     return hashlib.md5(
         text.encode()

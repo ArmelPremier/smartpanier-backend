@@ -112,14 +112,14 @@ def seed_store(json_file, store_name):
 
         db.commit()
 
-        print(f"\n✅ {store_name}")
-        print(f"Produits créés : {nb_produits}")
-        print(f"Offres créées : {nb_offres}")
+        print(f"\n[OK] {store_name}")
+        print(f"Produits crees : {nb_produits}")
+        print(f"Offres creees : {nb_offres}")
 
     except Exception as e:
 
         db.rollback()
-        print("❌ Erreur :", e)
+        print("[ERREUR] :", e)
 
     finally:
         db.close()

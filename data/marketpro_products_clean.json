@@ -6,16 +6,15 @@
         "categorie": "Fruits secs",
         "magasin": "MarketPro",
         "marque": null,
-        "code_normalise": "abricot_secs",
+        "code_normalise": "abricot",
         "qualite_score": 5,
         "quantite_normalisee": 1000,
         "categorie_canonique": "fruits secs",
-        "nom_normalise": "abricot secs",
-        "product_key": "0a7a6a67d776",
-        "cleaning_confidence": 100,
+        "nom_normalise": "abricot",
+        "product_key": "95fd80aaa97e",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "abricot",
-            "secs"
+            "abricot"
         ]
     },
     {
@@ -43,16 +42,15 @@
         "categorie": "Fruits secs",
         "magasin": "MarketPro",
         "marque": null,
-        "code_normalise": "cacahuete_rouges",
+        "code_normalise": "cacahuete",
         "qualite_score": 5,
         "quantite_normalisee": 1000,
         "categorie_canonique": "fruits secs",
-        "nom_normalise": "cacahuete rouges",
-        "product_key": "cef87fd40def",
-        "cleaning_confidence": 100,
+        "nom_normalise": "cacahuete",
+        "product_key": "e9a841ab8953",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "cacahuete",
-            "rouges"
+            "cacahuete"
         ]
     },
     {
@@ -62,16 +60,15 @@
         "categorie": "Fruits secs",
         "magasin": "MarketPro",
         "marque": null,
-        "code_normalise": "figue_seche",
+        "code_normalise": "figue",
         "qualite_score": 5,
         "quantite_normalisee": 1000,
         "categorie_canonique": "fruits secs",
-        "nom_normalise": "figue seche",
-        "product_key": "6d2e49737545",
-        "cleaning_confidence": 100,
+        "nom_normalise": "figue",
+        "product_key": "502b29a619d7",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "figue",
-            "seche"
+            "figue"
         ]
     },
     {
@@ -119,16 +116,15 @@
         "categorie": "Fruits secs",
         "magasin": "MarketPro",
         "marque": null,
-        "code_normalise": "pruneaux_secs",
+        "code_normalise": "pruneaux",
         "qualite_score": 5,
         "quantite_normalisee": 1000,
         "categorie_canonique": "fruits secs",
-        "nom_normalise": "pruneaux secs",
-        "product_key": "6d81cc854ef2",
-        "cleaning_confidence": 100,
+        "nom_normalise": "pruneaux",
+        "product_key": "e13288e03fc4",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "pruneaux",
-            "secs"
+            "pruneaux"
         ]
     },
     {
@@ -138,16 +134,15 @@
         "categorie": "Fruits secs",
         "magasin": "MarketPro",
         "marque": null,
-        "code_normalise": "raisin_secs",
+        "code_normalise": "raisin",
         "qualite_score": 5,
         "quantite_normalisee": 1000,
         "categorie_canonique": "fruits secs",
-        "nom_normalise": "raisin secs",
-        "product_key": "c27e80065c81",
-        "cleaning_confidence": 100,
+        "nom_normalise": "raisin",
+        "product_key": "d7d30fab6696",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "raisin",
-            "secs"
+            "raisin"
         ]
     },
     {
@@ -157,17 +152,15 @@
         "categorie": "Conserves",
         "magasin": "MarketPro",
         "marque": "Delcielo",
-        "code_normalise": "ananas_tranches",
+        "code_normalise": "ananas",
         "qualite_score": 5,
         "quantite_normalisee": null,
         "categorie_canonique": "conserves",
-        "nom_normalise": "ananas tranches 4",
-        "product_key": "3dfd6f460c21",
-        "cleaning_confidence": 90,
+        "nom_normalise": "ananas",
+        "product_key": "0062bb75ef81",
+        "cleaning_confidence": 75,
         "matching_tokens": [
-            "4",
-            "ananas",
-            "tranches"
+            "ananas"
         ]
     },
     {
@@ -199,11 +192,10 @@
         "qualite_score": 5,
         "quantite_normalisee": null,
         "categorie_canonique": "conserves",
-        "nom_normalise": "champignons 4",
-        "product_key": "2e3188be5ccb",
-        "cleaning_confidence": 90,
+        "nom_normalise": "champignons",
+        "product_key": "9f884757bc0a",
+        "cleaning_confidence": 75,
         "matching_tokens": [
-            "4",
             "champignons"
         ]
     },
@@ -218,12 +210,10 @@
         "qualite_score": 5,
         "quantite_normalisee": null,
         "categorie_canonique": "conserves",
-        "nom_normalise": "cornichon 5 1",
-        "product_key": "1759cddf6ac9",
-        "cleaning_confidence": 90,
+        "nom_normalise": "cornichon",
+        "product_key": "2aac25404f0e",
+        "cleaning_confidence": 75,
         "matching_tokens": [
-            "1",
-            "5",
             "cornichon"
         ]
     },
@@ -251,18 +241,17 @@
         "quantite": "605 G",
         "categorie": "Conserves",
         "magasin": "MarketPro",
-        "marque": null,
-        "code_normalise": "demi_glace_ideal",
+        "marque": "Ideal",
+        "code_normalise": "demi_glace",
         "qualite_score": 5,
         "quantite_normalisee": 605,
         "categorie_canonique": "conserves",
-        "nom_normalise": "demi glace ideal",
-        "product_key": "022e24bf917c",
+        "nom_normalise": "demi glace",
+        "product_key": "4c1d288f6813",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "demi",
-            "glace",
-            "ideal"
+            "glace"
         ]
     },
     {
@@ -276,11 +265,10 @@
         "qualite_score": 5,
         "quantite_normalisee": null,
         "categorie_canonique": "conserves",
-        "nom_normalise": "demi peche 4",
-        "product_key": "e29ee0344ba0",
+        "nom_normalise": "demi peche",
+        "product_key": "025108e2c733",
         "cleaning_confidence": 90,
         "matching_tokens": [
-            "4",
             "demi",
             "peche"
         ]
@@ -311,16 +299,15 @@
         "categorie": "Conserves",
         "magasin": "MarketPro",
         "marque": "Mido",
-        "code_normalise": "haricots_rouges",
+        "code_normalise": "haricots",
         "qualite_score": 5,
         "quantite_normalisee": 800,
         "categorie_canonique": "conserves",
-        "nom_normalise": "haricots rouges",
-        "product_key": "d812a7d258e8",
-        "cleaning_confidence": 100,
+        "nom_normalise": "haricots",
+        "product_key": "23342ecbf0f9",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "haricots",
-            "rouges"
+            "haricots"
         ]
     },
     {
@@ -352,11 +339,10 @@
         "qualite_score": 5,
         "quantite_normalisee": null,
         "categorie_canonique": "conserves",
-        "nom_normalise": "mais 4",
-        "product_key": "45dc24132bd0",
-        "cleaning_confidence": 90,
+        "nom_normalise": "mais",
+        "product_key": "18f97c457efd",
+        "cleaning_confidence": 75,
         "matching_tokens": [
-            "4",
             "mais"
         ]
     },
@@ -371,13 +357,11 @@
         "qualite_score": 5,
         "quantite_normalisee": 190,
         "categorie_canonique": "conserves",
-        "nom_normalise": "moutarde a l ancienne",
-        "product_key": "83006d8cf9a1",
+        "nom_normalise": "moutarde ancienne",
+        "product_key": "87a07c6fedc9",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "a",
             "ancienne",
-            "l",
             "moutarde"
         ]
     },
@@ -406,19 +390,18 @@
         "quantite": "3000 G",
         "categorie": "Conserves",
         "magasin": "MarketPro",
-        "marque": null,
-        "code_normalise": "olives_noires_rondelles_siof",
+        "marque": "Siof",
+        "code_normalise": "olives_noires_rondelles",
         "qualite_score": 5,
         "quantite_normalisee": 3000,
         "categorie_canonique": "conserves",
-        "nom_normalise": "olives noires rondelles siof",
-        "product_key": "d1c8db5b8e35",
+        "nom_normalise": "olives noires rondelles",
+        "product_key": "9449eb205f2d",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "noires",
             "olives",
-            "rondelles",
-            "siof"
+            "rondelles"
         ]
     },
     {
@@ -446,17 +429,15 @@
         "quantite": "500G",
         "categorie": "Conserves",
         "magasin": "MarketPro",
-        "marque": null,
-        "code_normalise": "poivre_vert_bangor",
+        "marque": "Bangor",
+        "code_normalise": "poivre_vert",
         "qualite_score": 5,
         "quantite_normalisee": 500,
         "categorie_canonique": "conserves",
-        "nom_normalise": "poivre vert bangor 4",
-        "product_key": "5a4033f3d84c",
+        "nom_normalise": "poivre vert",
+        "product_key": "5c49112df4fd",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "4",
-            "bangor",
             "poivre",
             "vert"
         ]
@@ -491,12 +472,10 @@
         "qualite_score": 5,
         "quantite_normalisee": null,
         "categorie_canonique": "conserves",
-        "nom_normalise": "sauce pizza 5 1",
-        "product_key": "4f750cf98e38",
+        "nom_normalise": "sauce pizza",
+        "product_key": "1067b2e7dbae",
         "cleaning_confidence": 90,
         "matching_tokens": [
-            "1",
-            "5",
             "pizza",
             "sauce"
         ]
@@ -507,17 +486,15 @@
         "quantite": "1700 G",
         "categorie": "Conserves",
         "magasin": "MarketPro",
-        "marque": null,
-        "code_normalise": "thon_caly_bonite",
+        "marque": "Caly",
+        "code_normalise": "thon",
         "qualite_score": 5,
         "quantite_normalisee": 1700,
         "categorie_canonique": "conserves",
-        "nom_normalise": "thon caly bonite",
-        "product_key": "e8bd55028b66",
-        "cleaning_confidence": 100,
+        "nom_normalise": "thon",
+        "product_key": "fc0787641456",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "bonite",
-            "caly",
             "thon"
         ]
     },
@@ -527,17 +504,15 @@
         "quantite": "1,7 KG",
         "categorie": "Conserves",
         "magasin": "MarketPro",
-        "marque": null,
-        "code_normalise": "thon_filet_chellah",
+        "marque": "Chellah",
+        "code_normalise": "thon",
         "qualite_score": 5,
         "quantite_normalisee": 1700,
         "categorie_canonique": "conserves",
-        "nom_normalise": "thon filet chellah",
-        "product_key": "b774eba37940",
-        "cleaning_confidence": 100,
+        "nom_normalise": "thon",
+        "product_key": "fc0787641456",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "chellah",
-            "filet",
             "thon"
         ]
     },
@@ -548,16 +523,15 @@
         "categorie": "Épices",
         "magasin": "MarketPro",
         "marque": null,
-        "code_normalise": "ail_rouge",
+        "code_normalise": "ail",
         "qualite_score": 5,
         "quantite_normalisee": 1000,
         "categorie_canonique": "epices",
-        "nom_normalise": "ail rouge",
-        "product_key": "640712e08a5e",
-        "cleaning_confidence": 100,
+        "nom_normalise": "ail",
+        "product_key": "537773c4f79b",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "ail",
-            "rouge"
+            "ail"
         ]
     },
     {
@@ -606,16 +580,15 @@
         "categorie": "Épices",
         "magasin": "MarketPro",
         "marque": null,
-        "code_normalise": "cumin_moulu",
+        "code_normalise": "cumin",
         "qualite_score": 5,
         "quantite_normalisee": 1000,
         "categorie_canonique": "epices",
-        "nom_normalise": "cumin moulu",
-        "product_key": "e5aed7fe2f0a",
-        "cleaning_confidence": 100,
+        "nom_normalise": "cumin",
+        "product_key": "26a76f7ff551",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "cumin",
-            "moulu"
+            "cumin"
         ]
     },
     {
@@ -625,16 +598,15 @@
         "categorie": "Épices",
         "magasin": "MarketPro",
         "marque": null,
-        "code_normalise": "curcuma_moulu",
+        "code_normalise": "curcuma",
         "qualite_score": 5,
         "quantite_normalisee": 1000,
         "categorie_canonique": "epices",
-        "nom_normalise": "curcuma moulu",
-        "product_key": "8e7ddedefb1a",
-        "cleaning_confidence": 100,
+        "nom_normalise": "curcuma",
+        "product_key": "059d3585fc04",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "curcuma",
-            "moulu"
+            "curcuma"
         ]
     },
     {
@@ -644,16 +616,15 @@
         "categorie": "Épices",
         "magasin": "MarketPro",
         "marque": null,
-        "code_normalise": "gingembre_moulu",
+        "code_normalise": "gingembre",
         "qualite_score": 5,
         "quantite_normalisee": 1000,
         "categorie_canonique": "epices",
-        "nom_normalise": "gingembre moulu",
-        "product_key": "ed8be8e9e414",
-        "cleaning_confidence": 100,
+        "nom_normalise": "gingembre",
+        "product_key": "53d83450aaae",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "gingembre",
-            "moulu"
+            "gingembre"
         ]
     },
     {
@@ -663,15 +634,15 @@
         "categorie": "Épices",
         "magasin": "MarketPro",
         "marque": null,
-        "code_normalise": "bi_zaatar",
+        "code_normalise": "halabi_zaatar",
         "qualite_score": 5,
         "quantite_normalisee": 500,
         "categorie_canonique": "epices",
-        "nom_normalise": "bi zaatar",
-        "product_key": "e7049d637d45",
+        "nom_normalise": "halabi zaatar",
+        "product_key": "cb5f51effffb",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "bi",
+            "halabi",
             "zaatar"
         ]
     },
@@ -702,16 +673,15 @@
         "categorie": "Épices",
         "magasin": "MarketPro",
         "marque": null,
-        "code_normalise": "piment_doux_moulu",
+        "code_normalise": "piment_doux",
         "qualite_score": 5,
         "quantite_normalisee": 1000,
         "categorie_canonique": "epices",
-        "nom_normalise": "piment doux moulu",
-        "product_key": "8cae87e4900d",
+        "nom_normalise": "piment doux",
+        "product_key": "fa07081a1aa0",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "doux",
-            "moulu",
             "piment"
         ]
     },
@@ -722,16 +692,15 @@
         "categorie": "Épices",
         "magasin": "MarketPro",
         "marque": null,
-        "code_normalise": "piment_fort_moulu",
+        "code_normalise": "piment_fort",
         "qualite_score": 5,
         "quantite_normalisee": 1000,
         "categorie_canonique": "epices",
-        "nom_normalise": "piment fort moulu",
-        "product_key": "cbb97c1ffeae",
+        "nom_normalise": "piment fort",
+        "product_key": "f923c3cb147f",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "fort",
-            "moulu",
             "piment"
         ]
     },
@@ -742,15 +711,14 @@
         "categorie": "Épices",
         "magasin": "MarketPro",
         "marque": null,
-        "code_normalise": "poivre_noir_moulu",
+        "code_normalise": "poivre_noir",
         "qualite_score": 5,
         "quantite_normalisee": 1000,
         "categorie_canonique": "epices",
-        "nom_normalise": "poivre noir moulu",
-        "product_key": "f762c09e05f2",
+        "nom_normalise": "poivre noir",
+        "product_key": "dfff7589f9c8",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "moulu",
             "noir",
             "poivre"
         ]
@@ -785,11 +753,10 @@
         "qualite_score": 5,
         "quantite_normalisee": 150,
         "categorie_canonique": "epices",
-        "nom_normalise": "seven spices baharat 7",
-        "product_key": "c72fd67f94f7",
+        "nom_normalise": "seven spices baharat",
+        "product_key": "8fe270cdeef4",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "7",
             "baharat",
             "seven",
             "spices"
@@ -820,21 +787,17 @@
         "quantite": "10 L",
         "categorie": "Huiles",
         "magasin": "MarketPro",
-        "marque": null,
-        "code_normalise": "frity_bidon_10_litres_pet",
+        "marque": "Frity",
+        "code_normalise": "10_litres_pet",
         "qualite_score": 5,
         "quantite_normalisee": 10000,
         "categorie_canonique": "huiles",
-        "nom_normalise": "frity s bidon 10 litres pet",
-        "product_key": "eafb2123b049",
+        "nom_normalise": "litres pet",
+        "product_key": "d4e895955904",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "10",
-            "bidon",
-            "frity",
             "litres",
-            "pet",
-            "s"
+            "pet"
         ]
     },
     {
@@ -862,17 +825,16 @@
         "quantite": "5 L",
         "categorie": "Huiles",
         "magasin": "MarketPro",
-        "marque": null,
-        "code_normalise": "huile_table_lio",
+        "marque": "Lio",
+        "code_normalise": "huile_table",
         "qualite_score": 5,
         "quantite_normalisee": 5000,
         "categorie_canonique": "huiles",
-        "nom_normalise": "huile table lio",
-        "product_key": "3c1dbf376eaf",
+        "nom_normalise": "huile table",
+        "product_key": "0690b0466bae",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "huile",
-            "lio",
             "table"
         ]
     },
@@ -882,17 +844,16 @@
         "quantite": "10 L",
         "categorie": "Huiles",
         "magasin": "MarketPro",
-        "marque": null,
-        "code_normalise": "huile_louza",
+        "marque": "Louza",
+        "code_normalise": "huile",
         "qualite_score": 5,
         "quantite_normalisee": 10000,
         "categorie_canonique": "huiles",
-        "nom_normalise": "huile louza",
-        "product_key": "5a49c0b853b2",
-        "cleaning_confidence": 100,
+        "nom_normalise": "huile",
+        "product_key": "ae0f7a0a99e6",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "huile",
-            "louza"
+            "huile"
         ]
     },
     {
@@ -901,16 +862,15 @@
         "quantite": "50 CL",
         "categorie": "Huiles",
         "magasin": "MarketPro",
-        "marque": null,
-        "code_normalise": "vinaigre_dessaux",
+        "marque": "Dessaux",
+        "code_normalise": "vinaigre",
         "qualite_score": 5,
         "quantite_normalisee": 500,
         "categorie_canonique": "huiles",
-        "nom_normalise": "vinaigre dessaux",
-        "product_key": "715e9551d25c",
-        "cleaning_confidence": 100,
+        "nom_normalise": "vinaigre",
+        "product_key": "67e04e73c9a0",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "dessaux",
             "vinaigre"
         ]
     },
@@ -920,16 +880,15 @@
         "quantite": "5L",
         "categorie": "Huiles",
         "magasin": "MarketPro",
-        "marque": null,
-        "code_normalise": "vinaigre_dessaux_vcr",
+        "marque": "Dessaux",
+        "code_normalise": "vinaigre_vcr",
         "qualite_score": 5,
         "quantite_normalisee": 5000,
         "categorie_canonique": "huiles",
-        "nom_normalise": "vinaigre dessaux vcr",
-        "product_key": "ebe328d0a33b",
+        "nom_normalise": "vinaigre vcr",
+        "product_key": "785698c3980f",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "dessaux",
             "vcr",
             "vinaigre"
         ]
@@ -959,16 +918,14 @@
         "categorie": "Pâtes et Riz",
         "magasin": "MarketPro",
         "marque": "Cigala",
-        "code_normalise": "rouge",
+        "code_normalise": "",
         "qualite_score": 5,
         "quantite_normalisee": 5000,
         "categorie_canonique": "feculents",
-        "nom_normalise": "rouge",
-        "product_key": "0dd6434d1abe",
-        "cleaning_confidence": 85,
-        "matching_tokens": [
-            "rouge"
-        ]
+        "nom_normalise": "",
+        "product_key": "88f9c495ade9",
+        "cleaning_confidence": 55,
+        "matching_tokens": []
     },
     {
         "nom": "Penne Divella 500GR",
@@ -1014,16 +971,15 @@
         "categorie": "Pâtes et Riz",
         "magasin": "MarketPro",
         "marque": "Cigala",
-        "code_normalise": "riz_rouge",
+        "code_normalise": "riz",
         "qualite_score": 5,
         "quantite_normalisee": 1000,
         "categorie_canonique": "feculents",
-        "nom_normalise": "riz rouge",
-        "product_key": "7df0288d9d7a",
-        "cleaning_confidence": 100,
+        "nom_normalise": "riz",
+        "product_key": "0de2da88f687",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "riz",
-            "rouge"
+            "riz"
         ]
     },
     {
@@ -1068,17 +1024,16 @@
         "quantite": "385 G",
         "categorie": "Fruits secs",
         "magasin": "MarketPro",
-        "marque": null,
-        "code_normalise": "moutarde_savora",
+        "marque": "Savora",
+        "code_normalise": "moutarde",
         "qualite_score": 5,
         "quantite_normalisee": 385,
         "categorie_canonique": "fruits secs",
-        "nom_normalise": "moutarde savora",
-        "product_key": "1b8772001d6e",
-        "cleaning_confidence": 100,
+        "nom_normalise": "moutarde",
+        "product_key": "a8cf9f98ae31",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "moutarde",
-            "savora"
+            "moutarde"
         ]
     },
     {
@@ -1087,18 +1042,17 @@
         "quantite": "1 KG",
         "categorie": "Fruits secs",
         "magasin": "MarketPro",
-        "marque": null,
-        "code_normalise": "fromage_cerise_perla",
+        "marque": "Perla",
+        "code_normalise": "fromage_cerise",
         "qualite_score": 5,
         "quantite_normalisee": 1000,
         "categorie_canonique": "fruits secs",
-        "nom_normalise": "fromage cerise perla",
-        "product_key": "72bf02285fcc",
+        "nom_normalise": "fromage cerise",
+        "product_key": "445d61062503",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "cerise",
-            "fromage",
-            "perla"
+            "fromage"
         ]
     },
     {
@@ -1126,18 +1080,16 @@
         "quantite": "2.5 KG",
         "categorie": "Fruits secs",
         "magasin": "MarketPro",
-        "marque": null,
-        "code_normalise": "crinkle_fries_eurogold_4x",
+        "marque": "Eurogold",
+        "code_normalise": "crinkle_fries_4x",
         "qualite_score": 5,
         "quantite_normalisee": 2500,
         "categorie_canonique": "fruits secs",
-        "nom_normalise": "crinkle fries eurogold 4x",
-        "product_key": "c878fd83b297",
+        "nom_normalise": "crinkle fries",
+        "product_key": "cf2a21235240",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "4x",
             "crinkle",
-            "eurogold",
             "fries"
         ]
     },
@@ -1147,17 +1099,16 @@
         "quantite": "2.5 KG",
         "categorie": "Fruits secs",
         "magasin": "MarketPro",
-        "marque": null,
-        "code_normalise": "burger_pane_kasbah",
+        "marque": "Kasbah",
+        "code_normalise": "burger_pane",
         "qualite_score": 5,
         "quantite_normalisee": 2500,
         "categorie_canonique": "fruits secs",
-        "nom_normalise": "burger pane kasbah",
-        "product_key": "33e5559d3697",
+        "nom_normalise": "burger pane",
+        "product_key": "6f402a602fa8",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "burger",
-            "kasbah",
             "pane"
         ]
     },
@@ -1167,18 +1118,17 @@
         "quantite": "1 KG",
         "categorie": "Fruits secs",
         "magasin": "MarketPro",
-        "marque": null,
-        "code_normalise": "chili_cheese_nuggets_leduc",
+        "marque": "Leduc",
+        "code_normalise": "chili_cheese_nuggets",
         "qualite_score": 5,
         "quantite_normalisee": 1000,
         "categorie_canonique": "fruits secs",
-        "nom_normalise": "chili cheese nuggets leduc",
-        "product_key": "0307b2325305",
+        "nom_normalise": "chili cheese nuggets",
+        "product_key": "960175113ad6",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "cheese",
             "chili",
-            "leduc",
             "nuggets"
         ]
     },
@@ -1188,17 +1138,15 @@
         "quantite": "1,7 KG",
         "categorie": "Conserves",
         "magasin": "MarketPro",
-        "marque": null,
-        "code_normalise": "thon_filet_tamima",
+        "marque": "Tamima",
+        "code_normalise": "thon",
         "qualite_score": 5,
         "quantite_normalisee": 1700,
         "categorie_canonique": "conserves",
-        "nom_normalise": "thon filet tamima",
-        "product_key": "a51effbea4b3",
-        "cleaning_confidence": 100,
+        "nom_normalise": "thon",
+        "product_key": "fc0787641456",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "filet",
-            "tamima",
             "thon"
         ]
     },
@@ -1208,19 +1156,16 @@
         "quantite": "80 G",
         "categorie": "Conserves",
         "magasin": "MarketPro",
-        "marque": null,
-        "code_normalise": "thon_tamima_huile",
+        "marque": "Tamima",
+        "code_normalise": "thon_huile",
         "qualite_score": 5,
         "quantite_normalisee": 80,
         "categorie_canonique": "conserves",
-        "nom_normalise": "thon tamima a l huile",
-        "product_key": "2c311b697ee5",
+        "nom_normalise": "thon huile",
+        "product_key": "796e642bb29d",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "a",
             "huile",
-            "l",
-            "tamima",
             "thon"
         ]
     },
@@ -1230,17 +1175,15 @@
         "quantite": "1 unité",
         "categorie": "Conserves",
         "magasin": "MarketPro",
-        "marque": null,
-        "code_normalise": "tomate_concentre_aicha",
+        "marque": "Aicha",
+        "code_normalise": "tomate_concentre",
         "qualite_score": 5,
         "quantite_normalisee": null,
         "categorie_canonique": "conserves",
-        "nom_normalise": "tomate concentre aicha 4",
-        "product_key": "97f29494c909",
+        "nom_normalise": "tomate concentre",
+        "product_key": "1e197120459c",
         "cleaning_confidence": 90,
         "matching_tokens": [
-            "4",
-            "aicha",
             "concentre",
             "tomate"
         ]

@@ -6,18 +6,16 @@
         "categorie": "Fruits secs",
         "magasin": "MyMarket",
         "marque": "Ja",
-        "code_normalise": "noix_cajou_grille_sale",
+        "code_normalise": "noix_cajou",
         "qualite_score": 5,
         "quantite_normalisee": 150,
         "categorie_canonique": "fruits secs",
-        "nom_normalise": "noix cajou grille sale",
-        "product_key": "cb45730f42de",
+        "nom_normalise": "noix cajou",
+        "product_key": "84fe40eae82c",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "cajou",
-            "grille",
-            "noix",
-            "sale"
+            "noix"
         ]
     },
     {
@@ -27,15 +25,14 @@
         "categorie": "Fruits secs",
         "magasin": "MyMarket",
         "marque": "Fancy",
-        "code_normalise": "super_extra_mix",
+        "code_normalise": "super_mix",
         "qualite_score": 6,
         "quantite_normalisee": 200,
         "categorie_canonique": "fruits secs",
-        "nom_normalise": "super extra mix",
-        "product_key": "8cb26b5d8f1d",
+        "nom_normalise": "super mix",
+        "product_key": "91df64a78e24",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "extra",
             "mix",
             "super"
         ]
@@ -47,17 +44,15 @@
         "categorie": "Fruits secs",
         "magasin": "MyMarket",
         "marque": "Fancy",
-        "code_normalise": "pistache_grille_sale",
+        "code_normalise": "pistache",
         "qualite_score": 5,
         "quantite_normalisee": 125,
         "categorie_canonique": "fruits secs",
-        "nom_normalise": "pistache grille sale",
-        "product_key": "ad90ac094fff",
-        "cleaning_confidence": 100,
+        "nom_normalise": "pistache",
+        "product_key": "ac9f844e9d47",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "grille",
-            "pistache",
-            "sale"
+            "pistache"
         ]
     },
     {
@@ -86,18 +81,16 @@
         "categorie": "Fruits secs",
         "magasin": "MyMarket",
         "marque": "Fancy",
-        "code_normalise": "noix_cajou_grille_sale",
+        "code_normalise": "noix_cajou",
         "qualite_score": 5,
         "quantite_normalisee": 125,
         "categorie_canonique": "fruits secs",
-        "nom_normalise": "noix cajou grille sale",
-        "product_key": "cb45730f42de",
+        "nom_normalise": "noix cajou",
+        "product_key": "84fe40eae82c",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "cajou",
-            "grille",
-            "noix",
-            "sale"
+            "noix"
         ]
     },
     {
@@ -107,16 +100,15 @@
         "categorie": "Fruits secs",
         "magasin": "MyMarket",
         "marque": "Fancy",
-        "code_normalise": "noix_cajou_fume",
+        "code_normalise": "noix_cajou",
         "qualite_score": 5,
         "quantite_normalisee": 125,
         "categorie_canonique": "fruits secs",
-        "nom_normalise": "noix cajou fume",
-        "product_key": "a2daa53bad3a",
+        "nom_normalise": "noix cajou",
+        "product_key": "84fe40eae82c",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "cajou",
-            "fume",
             "noix"
         ]
     },
@@ -247,16 +239,15 @@
         "categorie": "Fruits secs",
         "magasin": "MyMarket",
         "marque": "Fancy",
-        "code_normalise": "amande_fume",
+        "code_normalise": "amande",
         "qualite_score": 5,
         "quantite_normalisee": 120,
         "categorie_canonique": "fruits secs",
-        "nom_normalise": "amande fume",
-        "product_key": "3a04271d2967",
-        "cleaning_confidence": 100,
+        "nom_normalise": "amande",
+        "product_key": "c4c2cd4e205a",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "amande",
-            "fume"
+            "amande"
         ]
     },
     {
@@ -306,16 +297,15 @@
         "categorie": "Fruits secs",
         "magasin": "MyMarket",
         "marque": null,
-        "code_normalise": "figue_seche",
+        "code_normalise": "figue",
         "qualite_score": 5,
         "quantite_normalisee": 1000,
         "categorie_canonique": "fruits secs",
-        "nom_normalise": "figue seche",
-        "product_key": "6d2e49737545",
-        "cleaning_confidence": 100,
+        "nom_normalise": "figue",
+        "product_key": "502b29a619d7",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "figue",
-            "seche"
+            "figue"
         ]
     },
     {
@@ -325,17 +315,16 @@
         "categorie": "Fruits secs",
         "magasin": "MyMarket",
         "marque": null,
-        "code_normalise": "cacahuete_grille_saees_alasto",
+        "code_normalise": "cacahuete_saees_alasto",
         "qualite_score": 5,
         "quantite_normalisee": 150,
         "categorie_canonique": "fruits secs",
-        "nom_normalise": "cacahuete grille saees alasto",
-        "product_key": "492e88d346d7",
+        "nom_normalise": "cacahuete saees alasto",
+        "product_key": "a436fb839ba4",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "alasto",
             "cacahuete",
-            "grille",
             "saees"
         ]
     },
@@ -346,16 +335,15 @@
         "categorie": "Fruits secs",
         "magasin": "MyMarket",
         "marque": "Alesto",
-        "code_normalise": "cerise_seche_sucrees",
+        "code_normalise": "cerise_sucrees",
         "qualite_score": 5,
         "quantite_normalisee": 150,
         "categorie_canonique": "fruits secs",
-        "nom_normalise": "cerise seche sucrees",
-        "product_key": "2716152a54ce",
+        "nom_normalise": "cerise sucrees",
+        "product_key": "693ceee84dd9",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "cerise",
-            "seche",
             "sucrees"
         ]
     },
@@ -366,17 +354,15 @@
         "categorie": "Fruits secs",
         "magasin": "MyMarket",
         "marque": "Serano",
-        "code_normalise": "pistache_grille_sale",
+        "code_normalise": "pistache",
         "qualite_score": 5,
         "quantite_normalisee": 150,
         "categorie_canonique": "fruits secs",
-        "nom_normalise": "pistache grille sale",
-        "product_key": "ad90ac094fff",
-        "cleaning_confidence": 100,
+        "nom_normalise": "pistache",
+        "product_key": "ac9f844e9d47",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "grille",
-            "pistache",
-            "sale"
+            "pistache"
         ]
     },
     {
@@ -386,19 +372,17 @@
         "categorie": "Fruits secs",
         "magasin": "MyMarket",
         "marque": "Serano",
-        "code_normalise": "cocktail_noix_nobles_grille_sale",
+        "code_normalise": "cocktail_noix_nobles",
         "qualite_score": 5,
         "quantite_normalisee": 150,
         "categorie_canonique": "fruits secs",
-        "nom_normalise": "cocktail noix nobles grille sale",
-        "product_key": "1fef98537198",
+        "nom_normalise": "cocktail noix nobles",
+        "product_key": "2541adc3278e",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "cocktail",
-            "grille",
             "nobles",
-            "noix",
-            "sale"
+            "noix"
         ]
     },
     {
@@ -408,17 +392,15 @@
         "categorie": "Fruits secs",
         "magasin": "MyMarket",
         "marque": "Serano",
-        "code_normalise": "amande_grille_sale",
+        "code_normalise": "amande",
         "qualite_score": 5,
         "quantite_normalisee": 150,
         "categorie_canonique": "fruits secs",
-        "nom_normalise": "amande grille sale",
-        "product_key": "de119277df5f",
-        "cleaning_confidence": 100,
+        "nom_normalise": "amande",
+        "product_key": "c4c2cd4e205a",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "amande",
-            "grille",
-            "sale"
+            "amande"
         ]
     },
     {
@@ -466,15 +448,14 @@
         "categorie": "Épices",
         "magasin": "MyMarket",
         "marque": null,
-        "code_normalise": "graines_sesame_doree",
+        "code_normalise": "graines_sesame",
         "qualite_score": 5,
         "quantite_normalisee": 500,
         "categorie_canonique": "epices",
-        "nom_normalise": "graines sesame doree",
-        "product_key": "3a15ea7f8f91",
+        "nom_normalise": "graines sesame",
+        "product_key": "2bf815d31478",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "doree",
             "graines",
             "sesame"
         ]
@@ -506,16 +487,15 @@
         "quantite": "600G",
         "categorie": "Épices",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "sel_mer_fin_verseuse_baleine",
+        "marque": "Baleine",
+        "code_normalise": "sel_mer_fin_verseuse",
         "qualite_score": 5,
         "quantite_normalisee": 600,
         "categorie_canonique": "epices",
-        "nom_normalise": "sel mer fin verseuse baleine",
-        "product_key": "bae953560a01",
+        "nom_normalise": "sel mer fin verseuse",
+        "product_key": "6459379521ae",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "baleine",
             "fin",
             "mer",
             "sel",
@@ -528,19 +508,17 @@
         "quantite": "250G",
         "categorie": "Épices",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "pruneaux_secs_oncle_sam",
+        "marque": "Oncle",
+        "code_normalise": "pruneaux_sam",
         "qualite_score": 5,
         "quantite_normalisee": 250,
         "categorie_canonique": "epices",
-        "nom_normalise": "pruneaux secs oncle sam",
-        "product_key": "05984f014d1d",
+        "nom_normalise": "pruneaux sam",
+        "product_key": "9f5a5fd3d016",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "oncle",
             "pruneaux",
-            "sam",
-            "secs"
+            "sam"
         ]
     },
     {
@@ -549,16 +527,15 @@
         "quantite": "80G",
         "categorie": "Épices",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "thym_gaya",
+        "marque": "Gaya",
+        "code_normalise": "thym",
         "qualite_score": 5,
         "quantite_normalisee": 80,
         "categorie_canonique": "epices",
-        "nom_normalise": "thym gaya",
-        "product_key": "d1ebd380b0c9",
-        "cleaning_confidence": 100,
+        "nom_normalise": "thym",
+        "product_key": "461260ecd2f2",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "gaya",
             "thym"
         ]
     },
@@ -607,16 +584,15 @@
         "categorie": "Épices",
         "magasin": "MyMarket",
         "marque": null,
-        "code_normalise": "piment_fort_moulu",
+        "code_normalise": "piment_fort",
         "qualite_score": 5,
         "quantite_normalisee": 250,
         "categorie_canonique": "epices",
-        "nom_normalise": "piment fort moulu",
-        "product_key": "cbb97c1ffeae",
+        "nom_normalise": "piment fort",
+        "product_key": "f923c3cb147f",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "fort",
-            "moulu",
             "piment"
         ]
     },
@@ -627,16 +603,15 @@
         "categorie": "Épices",
         "magasin": "MyMarket",
         "marque": null,
-        "code_normalise": "curcuma_moulu",
+        "code_normalise": "curcuma",
         "qualite_score": 5,
         "quantite_normalisee": 250,
         "categorie_canonique": "epices",
-        "nom_normalise": "curcuma moulu",
-        "product_key": "8e7ddedefb1a",
-        "cleaning_confidence": 100,
+        "nom_normalise": "curcuma",
+        "product_key": "059d3585fc04",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "curcuma",
-            "moulu"
+            "curcuma"
         ]
     },
     {
@@ -646,15 +621,14 @@
         "categorie": "Épices",
         "magasin": "MyMarket",
         "marque": null,
-        "code_normalise": "poivre_noir_moulu",
+        "code_normalise": "poivre_noir",
         "qualite_score": 5,
         "quantite_normalisee": 250,
         "categorie_canonique": "epices",
-        "nom_normalise": "poivre noir moulu",
-        "product_key": "f762c09e05f2",
+        "nom_normalise": "poivre noir",
+        "product_key": "dfff7589f9c8",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "moulu",
             "noir",
             "poivre"
         ]
@@ -666,16 +640,15 @@
         "categorie": "Épices",
         "magasin": "MyMarket",
         "marque": null,
-        "code_normalise": "gingembre_moulu",
+        "code_normalise": "gingembre",
         "qualite_score": 5,
         "quantite_normalisee": 250,
         "categorie_canonique": "epices",
-        "nom_normalise": "gingembre moulu",
-        "product_key": "ed8be8e9e414",
-        "cleaning_confidence": 100,
+        "nom_normalise": "gingembre",
+        "product_key": "53d83450aaae",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "gingembre",
-            "moulu"
+            "gingembre"
         ]
     },
     {
@@ -685,16 +658,15 @@
         "categorie": "Épices",
         "magasin": "MyMarket",
         "marque": null,
-        "code_normalise": "cumin_moulu",
+        "code_normalise": "cumin",
         "qualite_score": 5,
         "quantite_normalisee": 250,
         "categorie_canonique": "epices",
-        "nom_normalise": "cumin moulu",
-        "product_key": "e5aed7fe2f0a",
-        "cleaning_confidence": 100,
+        "nom_normalise": "cumin",
+        "product_key": "26a76f7ff551",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "cumin",
-            "moulu"
+            "cumin"
         ]
     },
     {
@@ -704,16 +676,15 @@
         "categorie": "Épices",
         "magasin": "MyMarket",
         "marque": null,
-        "code_normalise": "poivre_blanc_moulu",
+        "code_normalise": "poivre_blanc",
         "qualite_score": 5,
         "quantite_normalisee": 250,
         "categorie_canonique": "epices",
-        "nom_normalise": "poivre blanc moulu",
-        "product_key": "2b492c9203ee",
+        "nom_normalise": "poivre blanc",
+        "product_key": "66e007d7614a",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "blanc",
-            "moulu",
             "poivre"
         ]
     },
@@ -798,16 +769,15 @@
         "quantite": "1KG",
         "categorie": "Épices",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "gros_sel_mer_beros",
+        "marque": "Beros",
+        "code_normalise": "gros_sel_mer",
         "qualite_score": 5,
         "quantite_normalisee": 1000,
         "categorie_canonique": "epices",
-        "nom_normalise": "gros sel mer beros",
-        "product_key": "91313f027090",
+        "nom_normalise": "gros sel mer",
+        "product_key": "10961b559b35",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "beros",
             "gros",
             "mer",
             "sel"
@@ -839,17 +809,16 @@
         "quantite": "220G",
         "categorie": "Épices",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "curry_gaya",
+        "marque": "Gaya",
+        "code_normalise": "curry",
         "qualite_score": 5,
         "quantite_normalisee": 220,
         "categorie_canonique": "epices",
-        "nom_normalise": "curry gaya",
-        "product_key": "1815abf5871a",
-        "cleaning_confidence": 100,
+        "nom_normalise": "curry",
+        "product_key": "41db8cf958be",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "curry",
-            "gaya"
+            "curry"
         ]
     },
     {
@@ -859,16 +828,15 @@
         "categorie": "Épices",
         "magasin": "MyMarket",
         "marque": "Denia",
-        "code_normalise": "abricot_sec",
+        "code_normalise": "abricot",
         "qualite_score": 5,
         "quantite_normalisee": 250,
         "categorie_canonique": "epices",
-        "nom_normalise": "abricot sec",
-        "product_key": "531b561a35fe",
-        "cleaning_confidence": 100,
+        "nom_normalise": "abricot",
+        "product_key": "8f78a2d613d3",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "abricot",
-            "sec"
+            "abricot"
         ]
     },
     {
@@ -897,16 +865,15 @@
         "categorie": "Épices",
         "magasin": "MyMarket",
         "marque": "Rosana",
-        "code_normalise": "curcuma_moulu",
+        "code_normalise": "curcuma",
         "qualite_score": 5,
         "quantite_normalisee": 100,
         "categorie_canonique": "epices",
-        "nom_normalise": "curcuma moulu",
-        "product_key": "8e7ddedefb1a",
-        "cleaning_confidence": 100,
+        "nom_normalise": "curcuma",
+        "product_key": "059d3585fc04",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "curcuma",
-            "moulu"
+            "curcuma"
         ]
     },
     {
@@ -916,18 +883,16 @@
         "categorie": "Huiles",
         "magasin": "MyMarket",
         "marque": "Sfassif",
-        "code_normalise": "huile_olive_vierge",
+        "code_normalise": "huile_olive",
         "qualite_score": 6,
         "quantite_normalisee": 2000,
         "categorie_canonique": "huiles",
-        "nom_normalise": "huile olive vierge 1",
-        "product_key": "bd93f4819350",
+        "nom_normalise": "huile olive",
+        "product_key": "414e723f34ad",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "1",
             "huile",
-            "olive",
-            "vierge"
+            "olive"
         ]
     },
     {
@@ -936,16 +901,15 @@
         "quantite": "500 ML",
         "categorie": "Huiles",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "vinaigrette_citron_ayala",
+        "marque": "Ayala",
+        "code_normalise": "vinaigrette_citron",
         "qualite_score": 5,
         "quantite_normalisee": 500,
         "categorie_canonique": "huiles",
-        "nom_normalise": "vinaigrette citron ayala",
-        "product_key": "5a112bca01f9",
+        "nom_normalise": "vinaigrette citron",
+        "product_key": "082e6d86391a",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "ayala",
             "citron",
             "vinaigrette"
         ]
@@ -957,17 +921,16 @@
         "categorie": "Huiles",
         "magasin": "MyMarket",
         "marque": "Sfassif",
-        "code_normalise": "huile_olive_vierge",
+        "code_normalise": "huile_olive",
         "qualite_score": 6,
         "quantite_normalisee": 1000,
         "categorie_canonique": "huiles",
-        "nom_normalise": "huile olive vierge",
-        "product_key": "4f2966ca317f",
+        "nom_normalise": "huile olive",
+        "product_key": "414e723f34ad",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "huile",
-            "olive",
-            "vierge"
+            "olive"
         ]
     },
     {
@@ -977,21 +940,18 @@
         "categorie": "Huiles",
         "magasin": "MyMarket",
         "marque": "Sfassif",
-        "code_normalise": "huile_olive_vierge_extra_extraction_froid",
+        "code_normalise": "huile_olive_extraction_froid",
         "qualite_score": 7,
         "quantite_normalisee": 250,
         "categorie_canonique": "huiles",
-        "nom_normalise": "huile olive vierge extra extraction a froid",
-        "product_key": "39e0532f14de",
+        "nom_normalise": "huile olive extraction froid",
+        "product_key": "be4d57b6b2b1",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "a",
-            "extra",
             "extraction",
             "froid",
             "huile",
-            "olive",
-            "vierge"
+            "olive"
         ]
     },
     {
@@ -1001,21 +961,18 @@
         "categorie": "Huiles",
         "magasin": "MyMarket",
         "marque": "Sfassif",
-        "code_normalise": "huile_olive_vierge_extra_extraction_froid",
+        "code_normalise": "huile_olive_extraction_froid",
         "qualite_score": 7,
         "quantite_normalisee": 500,
         "categorie_canonique": "huiles",
-        "nom_normalise": "huile olive vierge extra extraction a froid",
-        "product_key": "39e0532f14de",
+        "nom_normalise": "huile olive extraction froid",
+        "product_key": "be4d57b6b2b1",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "a",
-            "extra",
             "extraction",
             "froid",
             "huile",
-            "olive",
-            "vierge"
+            "olive"
         ]
     },
     {
@@ -1065,18 +1022,16 @@
         "categorie": "Huiles",
         "magasin": "MyMarket",
         "marque": "Zaytouni",
-        "code_normalise": "huile_olive_vierge",
+        "code_normalise": "huile_olive",
         "qualite_score": 6,
         "quantite_normalisee": 2000,
         "categorie_canonique": "huiles",
-        "nom_normalise": "huile olive vierge 1",
-        "product_key": "bd93f4819350",
+        "nom_normalise": "huile olive",
+        "product_key": "414e723f34ad",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "1",
             "huile",
-            "olive",
-            "vierge"
+            "olive"
         ]
     },
     {
@@ -1086,17 +1041,16 @@
         "categorie": "Huiles",
         "magasin": "MyMarket",
         "marque": "Zaytouni",
-        "code_normalise": "huile_olive_vierge",
+        "code_normalise": "huile_olive",
         "qualite_score": 6,
         "quantite_normalisee": 1000,
         "categorie_canonique": "huiles",
-        "nom_normalise": "huile olive vierge",
-        "product_key": "4f2966ca317f",
+        "nom_normalise": "huile olive",
+        "product_key": "414e723f34ad",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "huile",
-            "olive",
-            "vierge"
+            "olive"
         ]
     },
     {
@@ -1106,17 +1060,16 @@
         "categorie": "Huiles",
         "magasin": "MyMarket",
         "marque": "Hala",
-        "code_normalise": "huile_special_friture",
+        "code_normalise": "huile_friture",
         "qualite_score": 5,
         "quantite_normalisee": 5000,
         "categorie_canonique": "huiles",
-        "nom_normalise": "huile special friture",
-        "product_key": "bc7e49d4d0f4",
+        "nom_normalise": "huile friture",
+        "product_key": "b1aa24e7569d",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "friture",
-            "huile",
-            "special"
+            "huile"
         ]
     },
     {
@@ -1126,17 +1079,16 @@
         "categorie": "Huiles",
         "magasin": "MyMarket",
         "marque": "Hala",
-        "code_normalise": "huile_special_friture",
+        "code_normalise": "huile_friture",
         "qualite_score": 5,
         "quantite_normalisee": 2000,
         "categorie_canonique": "huiles",
-        "nom_normalise": "huile special friture",
-        "product_key": "bc7e49d4d0f4",
+        "nom_normalise": "huile friture",
+        "product_key": "b1aa24e7569d",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "friture",
-            "huile",
-            "special"
+            "huile"
         ]
     },
     {
@@ -1150,11 +1102,10 @@
         "qualite_score": 5,
         "quantite_normalisee": 2000,
         "categorie_canonique": "huiles",
-        "nom_normalise": "huile 100 tournesol",
-        "product_key": "5c0ef7acda5a",
+        "nom_normalise": "huile tournesol",
+        "product_key": "1a500b0abe50",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "100",
             "huile",
             "tournesol"
         ]
@@ -1170,11 +1121,10 @@
         "qualite_score": 5,
         "quantite_normalisee": 5000,
         "categorie_canonique": "huiles",
-        "nom_normalise": "huile 100 tournesol",
-        "product_key": "5c0ef7acda5a",
+        "nom_normalise": "huile tournesol",
+        "product_key": "1a500b0abe50",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "100",
             "huile",
             "tournesol"
         ]
@@ -1190,11 +1140,10 @@
         "qualite_score": 5,
         "quantite_normalisee": 1000,
         "categorie_canonique": "huiles",
-        "nom_normalise": "huile 100 tournesol",
-        "product_key": "5c0ef7acda5a",
+        "nom_normalise": "huile tournesol",
+        "product_key": "1a500b0abe50",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "100",
             "huile",
             "tournesol"
         ]
@@ -1206,16 +1155,15 @@
         "categorie": "Huiles",
         "magasin": "MyMarket",
         "marque": "Hala",
-        "code_normalise": "huile_table_surchoix",
+        "code_normalise": "huile_table",
         "qualite_score": 5,
         "quantite_normalisee": 10000,
         "categorie_canonique": "huiles",
-        "nom_normalise": "huile table surchoix",
-        "product_key": "b5f40f96521f",
+        "nom_normalise": "huile table",
+        "product_key": "0690b0466bae",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "huile",
-            "surchoix",
             "table"
         ]
     },
@@ -1226,16 +1174,15 @@
         "categorie": "Huiles",
         "magasin": "MyMarket",
         "marque": "Hala",
-        "code_normalise": "huile_table_surchoix",
+        "code_normalise": "huile_table",
         "qualite_score": 5,
         "quantite_normalisee": 8000,
         "categorie_canonique": "huiles",
-        "nom_normalise": "huile table surchoix",
-        "product_key": "b5f40f96521f",
+        "nom_normalise": "huile table",
+        "product_key": "0690b0466bae",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "huile",
-            "surchoix",
             "table"
         ]
     },
@@ -1246,16 +1193,15 @@
         "categorie": "Huiles",
         "magasin": "MyMarket",
         "marque": "Hala",
-        "code_normalise": "huile_table_surchoix",
+        "code_normalise": "huile_table",
         "qualite_score": 5,
         "quantite_normalisee": 5000,
         "categorie_canonique": "huiles",
-        "nom_normalise": "huile table surchoix",
-        "product_key": "b5f40f96521f",
+        "nom_normalise": "huile table",
+        "product_key": "0690b0466bae",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "huile",
-            "surchoix",
             "table"
         ]
     },
@@ -1266,16 +1212,15 @@
         "categorie": "Huiles",
         "magasin": "MyMarket",
         "marque": "Hala",
-        "code_normalise": "huile_table_surchoix",
+        "code_normalise": "huile_table",
         "qualite_score": 5,
         "quantite_normalisee": 4000,
         "categorie_canonique": "huiles",
-        "nom_normalise": "huile table surchoix",
-        "product_key": "b5f40f96521f",
+        "nom_normalise": "huile table",
+        "product_key": "0690b0466bae",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "huile",
-            "surchoix",
             "table"
         ]
     },
@@ -1286,16 +1231,15 @@
         "categorie": "Huiles",
         "magasin": "MyMarket",
         "marque": "Hala",
-        "code_normalise": "huile_table_surchoix",
+        "code_normalise": "huile_table",
         "qualite_score": 5,
         "quantite_normalisee": 2000,
         "categorie_canonique": "huiles",
-        "nom_normalise": "huile table surchoix",
-        "product_key": "b5f40f96521f",
+        "nom_normalise": "huile table",
+        "product_key": "0690b0466bae",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "huile",
-            "surchoix",
             "table"
         ]
     },
@@ -1306,16 +1250,15 @@
         "categorie": "Huiles",
         "magasin": "MyMarket",
         "marque": "Hala",
-        "code_normalise": "huile_table_surchoix",
+        "code_normalise": "huile_table",
         "qualite_score": 5,
         "quantite_normalisee": 1000,
         "categorie_canonique": "huiles",
-        "nom_normalise": "huile table surchoix",
-        "product_key": "b5f40f96521f",
+        "nom_normalise": "huile table",
+        "product_key": "0690b0466bae",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "huile",
-            "surchoix",
             "table"
         ]
     },
@@ -1326,17 +1269,15 @@
         "categorie": "Huiles",
         "magasin": "MyMarket",
         "marque": "Hala",
-        "code_normalise": "huile_table_surchoix",
+        "code_normalise": "huile_table",
         "qualite_score": 5,
         "quantite_normalisee": 2000,
         "categorie_canonique": "huiles",
-        "nom_normalise": "huile table surchoix 1",
-        "product_key": "862e85eb882a",
+        "nom_normalise": "huile table",
+        "product_key": "0690b0466bae",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "1",
             "huile",
-            "surchoix",
             "table"
         ]
     },
@@ -1368,18 +1309,16 @@
         "categorie": "Huiles",
         "magasin": "MyMarket",
         "marque": "Olinia",
-        "code_normalise": "huile_olive_extra_vierge",
+        "code_normalise": "huile_olive",
         "qualite_score": 7,
         "quantite_normalisee": 4000,
         "categorie_canonique": "huiles",
-        "nom_normalise": "huile olive extra vierge",
-        "product_key": "5e4255632d59",
+        "nom_normalise": "huile olive",
+        "product_key": "414e723f34ad",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "extra",
             "huile",
-            "olive",
-            "vierge"
+            "olive"
         ]
     },
     {
@@ -1410,16 +1349,15 @@
         "quantite": "250G",
         "categorie": "Pâtes",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "nouilles_instantanees_harmony",
+        "marque": "Harmony",
+        "code_normalise": "nouilles_instantanees",
         "qualite_score": 5,
         "quantite_normalisee": 250,
         "categorie_canonique": "feculents",
-        "nom_normalise": "nouilles instantanees harmony",
-        "product_key": "0cb3b0fb4c0a",
+        "nom_normalise": "nouilles instantanees",
+        "product_key": "2d67a3439418",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "harmony",
             "instantanees",
             "nouilles"
         ]
@@ -1430,16 +1368,17 @@
         "quantite": "250G",
         "categorie": "Pâtes",
         "magasin": "MyMarket",
-        "marque": "Jessy'S",
-        "code_normalise": "vermicelle_chine",
+        "marque": null,
+        "code_normalise": "vermicelle_chine_jessy",
         "qualite_score": 5,
         "quantite_normalisee": 250,
         "categorie_canonique": "feculents",
-        "nom_normalise": "vermicelle chine",
-        "product_key": "0c8c2e25c5ca",
+        "nom_normalise": "vermicelle chine jessy",
+        "product_key": "94faf297d6b1",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "chine",
+            "jessy",
             "vermicelle"
         ]
     },
@@ -1454,11 +1393,10 @@
         "qualite_score": 5,
         "quantite_normalisee": 500,
         "categorie_canonique": "feculents",
-        "nom_normalise": "spaghetti ndeg5",
-        "product_key": "d933a1367944",
-        "cleaning_confidence": 100,
+        "nom_normalise": "spaghetti",
+        "product_key": "cee858b5105c",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "ndeg5",
             "spaghetti"
         ]
     },
@@ -1487,15 +1425,14 @@
         "categorie": "Pâtes",
         "magasin": "MyMarket",
         "marque": "Panzani",
-        "code_normalise": "mini_penne",
+        "code_normalise": "penne",
         "qualite_score": 5,
         "quantite_normalisee": 500,
         "categorie_canonique": "feculents",
-        "nom_normalise": "mini penne",
-        "product_key": "af512a967930",
-        "cleaning_confidence": 100,
+        "nom_normalise": "penne",
+        "product_key": "32f9f1d6ca9c",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "mini",
             "penne"
         ]
     },
@@ -1506,16 +1443,15 @@
         "categorie": "Pâtes",
         "magasin": "MyMarket",
         "marque": "Panzani",
-        "code_normalise": "mini_farfalle",
+        "code_normalise": "farfalle",
         "qualite_score": 5,
         "quantite_normalisee": 500,
         "categorie_canonique": "feculents",
-        "nom_normalise": "mini farfalle",
-        "product_key": "d6085b1dec7f",
-        "cleaning_confidence": 100,
+        "nom_normalise": "farfalle",
+        "product_key": "f16840360a03",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "farfalle",
-            "mini"
+            "farfalle"
         ]
     },
     {
@@ -1543,16 +1479,15 @@
         "categorie": "Pâtes",
         "magasin": "MyMarket",
         "marque": "Panzani",
-        "code_normalise": "penne_rigate",
+        "code_normalise": "penne",
         "qualite_score": 5,
         "quantite_normalisee": 500,
         "categorie_canonique": "feculents",
-        "nom_normalise": "penne rigate",
-        "product_key": "d8097ef9e7d6",
-        "cleaning_confidence": 100,
+        "nom_normalise": "penne",
+        "product_key": "32f9f1d6ca9c",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "penne",
-            "rigate"
+            "penne"
         ]
     },
     {
@@ -1620,12 +1555,11 @@
         "qualite_score": 5,
         "quantite_normalisee": 500,
         "categorie_canonique": "feculents",
-        "nom_normalise": "capellini ndeg1",
-        "product_key": "7c36f5bb4ec3",
-        "cleaning_confidence": 100,
+        "nom_normalise": "capellini",
+        "product_key": "fed12a120bd1",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "capellini",
-            "ndeg1"
+            "capellini"
         ]
     },
     {
@@ -1634,15 +1568,16 @@
         "quantite": "375G",
         "categorie": "Pâtes",
         "magasin": "MyMarket",
-        "marque": "Jessy'S",
-        "code_normalise": "vermicelle_riz",
+        "marque": null,
+        "code_normalise": "vermicelle_riz_jessy",
         "qualite_score": 5,
         "quantite_normalisee": 375,
         "categorie_canonique": "feculents",
-        "nom_normalise": "vermicelle riz",
-        "product_key": "4bad221e45f0",
+        "nom_normalise": "vermicelle riz jessy",
+        "product_key": "267b61218ca6",
         "cleaning_confidence": 100,
         "matching_tokens": [
+            "jessy",
             "riz",
             "vermicelle"
         ]
@@ -1653,16 +1588,17 @@
         "quantite": "100G",
         "categorie": "Pâtes",
         "magasin": "MyMarket",
-        "marque": "Jessy'S",
-        "code_normalise": "vermicelle_chine",
+        "marque": null,
+        "code_normalise": "vermicelle_chine_jessy",
         "qualite_score": 5,
         "quantite_normalisee": 100,
         "categorie_canonique": "feculents",
-        "nom_normalise": "vermicelle chine",
-        "product_key": "0c8c2e25c5ca",
+        "nom_normalise": "vermicelle chine jessy",
+        "product_key": "94faf297d6b1",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "chine",
+            "jessy",
             "vermicelle"
         ]
     },
@@ -1709,15 +1645,14 @@
         "categorie": "Riz",
         "magasin": "MyMarket",
         "marque": "Cigala",
-        "code_normalise": "riz_risotto",
+        "code_normalise": "riz",
         "qualite_score": 5,
         "quantite_normalisee": 1000,
         "categorie_canonique": "feculents",
-        "nom_normalise": "riz risotto",
-        "product_key": "e46144d14c03",
-        "cleaning_confidence": 100,
+        "nom_normalise": "riz",
+        "product_key": "0de2da88f687",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "risotto",
             "riz"
         ]
     },
@@ -1749,17 +1684,15 @@
         "quantite": "5KG",
         "categorie": "Riz",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "riz_etuve_thailande_caprice",
+        "marque": "Caprice",
+        "code_normalise": "riz_thailande",
         "qualite_score": 5,
         "quantite_normalisee": 5000,
         "categorie_canonique": "feculents",
-        "nom_normalise": "riz etuve thailande caprice",
-        "product_key": "ef654e32d1f5",
+        "nom_normalise": "riz thailande",
+        "product_key": "a508b9a5f5f8",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "caprice",
-            "etuve",
             "riz",
             "thailande"
         ]
@@ -1771,19 +1704,16 @@
         "categorie": "Riz",
         "magasin": "MyMarket",
         "marque": "Tipiak",
-        "code_normalise": "quinoa_decile_sachet",
+        "code_normalise": "quinoa_decile",
         "qualite_score": 6,
         "quantite_normalisee": 120,
         "categorie_canonique": "feculents",
-        "nom_normalise": "quinoa decile 2 sachet x",
-        "product_key": "97969d3f17dd",
+        "nom_normalise": "quinoa decile",
+        "product_key": "b72d5916e5e2",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "2",
             "decile",
-            "quinoa",
-            "sachet",
-            "x"
+            "quinoa"
         ]
     },
     {
@@ -1870,86 +1800,6 @@
         ]
     },
     {
-        "nom": "Riz Rond Cigala 1kg",
-        "prix": 21957.0,
-        "quantite": "1KG",
-        "categorie": "Riz",
-        "magasin": "MyMarket",
-        "marque": "Cigala",
-        "code_normalise": "riz_rond",
-        "qualite_score": 5,
-        "quantite_normalisee": 1000,
-        "categorie_canonique": "feculents",
-        "nom_normalise": "riz rond",
-        "product_key": "14eda8f94d31",
-        "cleaning_confidence": 100,
-        "matching_tokens": [
-            "riz",
-            "rond"
-        ]
-    },
-    {
-        "nom": "Riz Semi Long Blanc Cigala 1kg",
-        "prix": 24518.0,
-        "quantite": "1KG",
-        "categorie": "Riz",
-        "magasin": "MyMarket",
-        "marque": "Cigala",
-        "code_normalise": "riz_semi_long_blanc",
-        "qualite_score": 5,
-        "quantite_normalisee": 1000,
-        "categorie_canonique": "feculents",
-        "nom_normalise": "riz semi long blanc",
-        "product_key": "e837031eaa91",
-        "cleaning_confidence": 100,
-        "matching_tokens": [
-            "blanc",
-            "long",
-            "riz",
-            "semi"
-        ]
-    },
-    {
-        "nom": "Riz Long Blanchi Cigala 1kg",
-        "prix": 23374.0,
-        "quantite": "1KG",
-        "categorie": "Riz",
-        "magasin": "MyMarket",
-        "marque": "Cigala",
-        "code_normalise": "riz_long_blanchi",
-        "qualite_score": 5,
-        "quantite_normalisee": 1000,
-        "categorie_canonique": "feculents",
-        "nom_normalise": "riz long blanchi",
-        "product_key": "f1e78dab2226",
-        "cleaning_confidence": 100,
-        "matching_tokens": [
-            "blanchi",
-            "long",
-            "riz"
-        ]
-    },
-    {
-        "nom": "Riz Jaune Etuvé Cigala 1kg",
-        "prix": 25844.0,
-        "quantite": "1KG",
-        "categorie": "Riz",
-        "magasin": "MyMarket",
-        "marque": "Cigala",
-        "code_normalise": "riz_une_etuve",
-        "qualite_score": 5,
-        "quantite_normalisee": 1000,
-        "categorie_canonique": "feculents",
-        "nom_normalise": "riz une etuve",
-        "product_key": "1d7464a05f61",
-        "cleaning_confidence": 100,
-        "matching_tokens": [
-            "etuve",
-            "riz",
-            "une"
-        ]
-    },
-    {
         "nom": "Le Blé Tendre Ebly 500 g",
         "prix": 39.5,
         "quantite": "500 G",
@@ -1993,18 +1843,15 @@
         "quantite": "85G",
         "categorie": "Conserves",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "thon_conserve_naturel_joly",
+        "marque": "Joly",
+        "code_normalise": "thon",
         "qualite_score": 5,
         "quantite_normalisee": 85,
         "categorie_canonique": "conserves",
-        "nom_normalise": "thon conserve naturel joly",
-        "product_key": "20b52df26ace",
-        "cleaning_confidence": 100,
+        "nom_normalise": "thon",
+        "product_key": "fc0787641456",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "conserve",
-            "joly",
-            "naturel",
             "thon"
         ]
     },
@@ -2014,18 +1861,16 @@
         "quantite": "130 G",
         "categorie": "Conserves",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "mais_doux_grains_madila",
+        "marque": "Madila",
+        "code_normalise": "mais_doux",
         "qualite_score": 5,
         "quantite_normalisee": 130,
         "categorie_canonique": "conserves",
-        "nom_normalise": "mais doux grains madila",
-        "product_key": "68cb6fa2e485",
+        "nom_normalise": "mais doux",
+        "product_key": "2e5a7c4fe853",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "doux",
-            "grains",
-            "madila",
             "mais"
         ]
     },
@@ -2035,20 +1880,16 @@
         "quantite": "1,7 KG",
         "categorie": "Conserves",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "bonite_conserve_sifa_huile_vegetale",
+        "marque": "Sifa",
+        "code_normalise": "huile",
         "qualite_score": 5,
         "quantite_normalisee": 1700,
         "categorie_canonique": "conserves",
-        "nom_normalise": "bonite conserve sifa huile vegetale",
-        "product_key": "4d1a83bac69b",
-        "cleaning_confidence": 100,
+        "nom_normalise": "huile",
+        "product_key": "0952717028ed",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "bonite",
-            "conserve",
-            "huile",
-            "sifa",
-            "vegetale"
+            "huile"
         ]
     },
     {
@@ -2057,24 +1898,18 @@
         "quantite": "85 G",
         "categorie": "Conserves",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "thon_entier_sauce_tomate_carle_pack",
+        "marque": "Carle",
+        "code_normalise": "thon_sauce_tomate",
         "qualite_score": 5,
         "quantite_normalisee": 85,
         "categorie_canonique": "conserves",
-        "nom_normalise": "thon entier a sauce tomate carle pack 3 x",
-        "product_key": "b50560714305",
+        "nom_normalise": "thon sauce tomate",
+        "product_key": "4f1e047ca363",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "3",
-            "a",
-            "carle",
-            "entier",
-            "pack",
             "sauce",
             "thon",
-            "tomate",
-            "x"
+            "tomate"
         ]
     },
     {
@@ -2083,17 +1918,15 @@
         "quantite": "85 G",
         "categorie": "Conserves",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "thon_entier_sauce_tomate_carle",
+        "marque": "Carle",
+        "code_normalise": "thon_sauce_tomate",
         "qualite_score": 5,
         "quantite_normalisee": 85,
         "categorie_canonique": "conserves",
-        "nom_normalise": "thon entier sauce tomate carle",
-        "product_key": "1eb4a6c91de0",
+        "nom_normalise": "thon sauce tomate",
+        "product_key": "4f1e047ca363",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "carle",
-            "entier",
             "sauce",
             "thon",
             "tomate"
@@ -2105,22 +1938,17 @@
         "quantite": "85G",
         "categorie": "Conserves",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "thon_entier_huile_vegetale_carle",
+        "marque": "Carle",
+        "code_normalise": "thon_huile",
         "qualite_score": 5,
         "quantite_normalisee": 85,
         "categorie_canonique": "conserves",
-        "nom_normalise": "thon entier a l huile vegetale carle",
-        "product_key": "1f438407567c",
+        "nom_normalise": "thon huile",
+        "product_key": "796e642bb29d",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "a",
-            "carle",
-            "entier",
             "huile",
-            "l",
-            "thon",
-            "vegetale"
+            "thon"
         ]
     },
     {
@@ -2129,20 +1957,16 @@
         "quantite": "115G",
         "categorie": "Conserves",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "filets_sardines_huile_olive_carle",
+        "marque": "Carle",
+        "code_normalise": "sardines_huile_olive",
         "qualite_score": 5,
         "quantite_normalisee": 115,
         "categorie_canonique": "conserves",
-        "nom_normalise": "filets sardines a l huile olive carle",
-        "product_key": "a9b4e59d9f1a",
+        "nom_normalise": "sardines huile olive",
+        "product_key": "0b07206f8bcf",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "a",
-            "carle",
-            "filets",
             "huile",
-            "l",
             "olive",
             "sardines"
         ]
@@ -2153,17 +1977,15 @@
         "quantite": "125G",
         "categorie": "Conserves",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "filets_maquereaux_sauce_tomate_carle",
+        "marque": "Carle",
+        "code_normalise": "maquereaux_sauce_tomate",
         "qualite_score": 5,
         "quantite_normalisee": 125,
         "categorie_canonique": "conserves",
-        "nom_normalise": "filets maquereaux sauce tomate carle",
-        "product_key": "68526ca768f0",
+        "nom_normalise": "maquereaux sauce tomate",
+        "product_key": "049465480426",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "carle",
-            "filets",
             "maquereaux",
             "sauce",
             "tomate"
@@ -2197,20 +2019,17 @@
         "quantite": "140G",
         "categorie": "Conserves",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "mais_doux_ayala_pack_3x",
+        "marque": "Ayala",
+        "code_normalise": "mais_doux_3x",
         "qualite_score": 5,
         "quantite_normalisee": 140,
         "categorie_canonique": "conserves",
-        "nom_normalise": "mais doux ayala pack 3x",
-        "product_key": "deb895234862",
+        "nom_normalise": "mais doux",
+        "product_key": "2e5a7c4fe853",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "3x",
-            "ayala",
             "doux",
-            "mais",
-            "pack"
+            "mais"
         ]
     },
     {
@@ -2219,20 +2038,18 @@
         "quantite": "185G",
         "categorie": "Conserves",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "asperges_blanches_coupees_extra_ayala",
+        "marque": "Ayala",
+        "code_normalise": "asperges_blanches_coupees",
         "qualite_score": 6,
         "quantite_normalisee": 185,
         "categorie_canonique": "conserves",
-        "nom_normalise": "asperges blanches coupees extra ayala",
-        "product_key": "f659fb3299cc",
+        "nom_normalise": "asperges blanches coupees",
+        "product_key": "45c40eadfa13",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "asperges",
-            "ayala",
             "blanches",
-            "coupees",
-            "extra"
+            "coupees"
         ]
     },
     {
@@ -2241,17 +2058,16 @@
         "quantite": "400G",
         "categorie": "Conserves",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "artichauts_entiers_ayala",
+        "marque": "Ayala",
+        "code_normalise": "artichauts_entiers",
         "qualite_score": 5,
         "quantite_normalisee": 400,
         "categorie_canonique": "conserves",
-        "nom_normalise": "artichauts entiers ayala",
-        "product_key": "bf476bcd21d8",
+        "nom_normalise": "artichauts entiers",
+        "product_key": "2d433b8de0f4",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "artichauts",
-            "ayala",
             "entiers"
         ]
     },
@@ -2261,18 +2077,16 @@
         "quantite": "355G",
         "categorie": "Conserves",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "champignons_tranches_ayala",
+        "marque": "Ayala",
+        "code_normalise": "champignons",
         "qualite_score": 5,
         "quantite_normalisee": 355,
         "categorie_canonique": "conserves",
-        "nom_normalise": "champignons tranches ayala",
-        "product_key": "649cc76bf55b",
-        "cleaning_confidence": 100,
+        "nom_normalise": "champignons",
+        "product_key": "9f884757bc0a",
+        "cleaning_confidence": 85,
         "matching_tokens": [
-            "ayala",
-            "champignons",
-            "tranches"
+            "champignons"
         ]
     },
     {
@@ -2281,16 +2095,15 @@
         "quantite": "400G",
         "categorie": "Conserves",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "pate_coing_membrillo_ayala",
+        "marque": "Ayala",
+        "code_normalise": "pate_coing_membrillo",
         "qualite_score": 5,
         "quantite_normalisee": 400,
         "categorie_canonique": "conserves",
-        "nom_normalise": "pate coing membrillo ayala",
-        "product_key": "7da479e0a66e",
+        "nom_normalise": "pate coing membrillo",
+        "product_key": "c334110aa842",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "ayala",
             "coing",
             "membrillo",
             "pate"
@@ -2302,16 +2115,15 @@
         "quantite": "400G",
         "categorie": "Conserves",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "petits_pois_rehydrates_ayala",
+        "marque": "Ayala",
+        "code_normalise": "petits_pois_rehydrates",
         "qualite_score": 5,
         "quantite_normalisee": 400,
         "categorie_canonique": "conserves",
-        "nom_normalise": "petits pois rehydrates ayala",
-        "product_key": "7c307792845f",
+        "nom_normalise": "petits pois rehydrates",
+        "product_key": "277b3e2777d1",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "ayala",
             "petits",
             "pois",
             "rehydrates"
@@ -2323,16 +2135,15 @@
         "quantite": "72G",
         "categorie": "Conserves",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "tacos_poisson_sauce_marine_ayala",
+        "marque": "Ayala",
+        "code_normalise": "tacos_poisson_sauce_marine",
         "qualite_score": 5,
         "quantite_normalisee": 72,
         "categorie_canonique": "conserves",
-        "nom_normalise": "tacos poisson sauce marine ayala",
-        "product_key": "f1e6247370ae",
+        "nom_normalise": "tacos poisson sauce marine",
+        "product_key": "4ae913b5bcaa",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "ayala",
             "marine",
             "poisson",
             "sauce",
@@ -2345,19 +2156,16 @@
         "quantite": "72G",
         "categorie": "Conserves",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "tacos_poisson_huile_tournesol_ayala",
+        "marque": "Ayala",
+        "code_normalise": "tacos_poisson_huile_tournesol",
         "qualite_score": 5,
         "quantite_normalisee": 72,
         "categorie_canonique": "conserves",
-        "nom_normalise": "tacos poisson a l huile tournesol ayala",
-        "product_key": "8751953adc2b",
+        "nom_normalise": "tacos poisson huile tournesol",
+        "product_key": "bc18abf27e83",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "a",
-            "ayala",
             "huile",
-            "l",
             "poisson",
             "tacos",
             "tournesol"
@@ -2369,19 +2177,16 @@
         "quantite": "72G",
         "categorie": "Conserves",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "tacos_poisson_ail_ayala",
+        "marque": "Ayala",
+        "code_normalise": "tacos_poisson_ail",
         "qualite_score": 5,
         "quantite_normalisee": 72,
         "categorie_canonique": "conserves",
-        "nom_normalise": "tacos poisson a l ail ayala",
-        "product_key": "17aec6a3d364",
+        "nom_normalise": "tacos poisson ail",
+        "product_key": "f86aee669fae",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "a",
             "ail",
-            "ayala",
-            "l",
             "poisson",
             "tacos"
         ]
@@ -2392,17 +2197,15 @@
         "quantite": "78G",
         "categorie": "Conserves",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "pate_thon_morceaux_ayala_2x",
+        "marque": "Ayala",
+        "code_normalise": "pate_thon_morceaux_2x",
         "qualite_score": 5,
         "quantite_normalisee": 78,
         "categorie_canonique": "conserves",
-        "nom_normalise": "pate thon morceaux ayala 2x",
-        "product_key": "d782f686c7ca",
+        "nom_normalise": "pate thon morceaux",
+        "product_key": "d3c2a80f8e42",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "2x",
-            "ayala",
             "morceaux",
             "pate",
             "thon"
@@ -2414,21 +2217,18 @@
         "quantite": "72G",
         "categorie": "Conserves",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "petits_calamars_farcis_encre_ayala",
+        "marque": "Ayala",
+        "code_normalise": "petits_calamars_farcis_encre",
         "qualite_score": 5,
         "quantite_normalisee": 72,
         "categorie_canonique": "conserves",
-        "nom_normalise": "petits calamars farcis a l encre ayala",
-        "product_key": "738f2db43867",
+        "nom_normalise": "petits calamars farcis encre",
+        "product_key": "d6c408925887",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "a",
-            "ayala",
             "calamars",
             "encre",
             "farcis",
-            "l",
             "petits"
         ]
     },
@@ -2438,17 +2238,16 @@
         "quantite": "72G",
         "categorie": "Conserves",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "chipirones_farcis_sauce_americaine_ayala",
+        "marque": "Ayala",
+        "code_normalise": "chipirones_farcis_sauce_americaine",
         "qualite_score": 5,
         "quantite_normalisee": 72,
         "categorie_canonique": "conserves",
-        "nom_normalise": "chipirones farcis sauce americaine ayala",
-        "product_key": "1bed9f808bc9",
+        "nom_normalise": "chipirones farcis sauce americaine",
+        "product_key": "e15ab13ef21a",
         "cleaning_confidence": 100,
         "matching_tokens": [
             "americaine",
-            "ayala",
             "chipirones",
             "farcis",
             "sauce"
@@ -2460,21 +2259,18 @@
         "quantite": "72G",
         "categorie": "Conserves",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "chipirones_farcis_huile_tournesol_ayala",
+        "marque": "Ayala",
+        "code_normalise": "chipirones_farcis_huile_tournesol",
         "qualite_score": 5,
         "quantite_normalisee": 72,
         "categorie_canonique": "conserves",
-        "nom_normalise": "chipirones farcis a l huile tournesol ayala",
-        "product_key": "d082b2e31e03",
+        "nom_normalise": "chipirones farcis huile tournesol",
+        "product_key": "0f4ca9deb40b",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "a",
-            "ayala",
             "chipirones",
             "farcis",
             "huile",
-            "l",
             "tournesol"
         ]
     },
@@ -2484,22 +2280,18 @@
         "quantite": "55G",
         "categorie": "Conserves",
         "magasin": "MyMarket",
-        "marque": null,
-        "code_normalise": "pack_petites_boites_calamars_sauce_americaine_ayala_3x",
+        "marque": "Ayala",
+        "code_normalise": "petites_boites_calamars_sauce_americaine_3x",
         "qualite_score": 5,
         "quantite_normalisee": 55,
         "categorie_canonique": "conserves",
-        "nom_normalise": "pack 3 petites boites calamars sauce americaine ayala 3x",
-        "product_key": "ceeca7a322c2",
+        "nom_normalise": "petites boites calamars sauce americaine",
+        "product_key": "1d4aca64e215",
         "cleaning_confidence": 100,
         "matching_tokens": [
-            "3",
-            "3x",
             "americaine",
-            "ayala",
             "boites",
             "calamars",
-            "pack",
             "petites",
             "sauce"
         ]
