@@ -1061,5 +1061,188 @@
         "matching_tokens": [
             "tagliatelle"
         ]
+    },
+    {
+        "nom": "Moutarde Savora 385 g",
+        "prix": 73.0,
+        "quantite": "385 G",
+        "categorie": "Fruits secs",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "moutarde_savora",
+        "qualite_score": 5,
+        "quantite_normalisee": 385,
+        "categorie_canonique": "fruits secs",
+        "nom_normalise": "moutarde savora",
+        "product_key": "1b8772001d6e",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "moutarde",
+            "savora"
+        ]
+    },
+    {
+        "nom": "Fromage Cerise Perla 1 kg",
+        "prix": 69.0,
+        "quantite": "1 KG",
+        "categorie": "Fruits secs",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "fromage_cerise_perla",
+        "qualite_score": 5,
+        "quantite_normalisee": 1000,
+        "categorie_canonique": "fruits secs",
+        "nom_normalise": "fromage cerise perla",
+        "product_key": "72bf02285fcc",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "cerise",
+            "fromage",
+            "perla"
+        ]
+    },
+    {
+        "nom": "Oignon Crispy 500 G",
+        "prix": 46.0,
+        "quantite": "500 G",
+        "categorie": "Fruits secs",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "oignon_crispy",
+        "qualite_score": 5,
+        "quantite_normalisee": 500,
+        "categorie_canonique": "fruits secs",
+        "nom_normalise": "oignon crispy",
+        "product_key": "7d86a45bf0c2",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "crispy",
+            "oignon"
+        ]
+    },
+    {
+        "nom": "Crinkle Fries Eurogold 4x2.5 KG",
+        "prix": 185.0,
+        "quantite": "2.5 KG",
+        "categorie": "Fruits secs",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "crinkle_fries_eurogold_4x",
+        "qualite_score": 5,
+        "quantite_normalisee": 2500,
+        "categorie_canonique": "fruits secs",
+        "nom_normalise": "crinkle fries eurogold 4x",
+        "product_key": "c878fd83b297",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "4x",
+            "crinkle",
+            "eurogold",
+            "fries"
+        ]
+    },
+    {
+        "nom": "Burger Pane Kasbah 2.5 KG",
+        "prix": 137.5,
+        "quantite": "2.5 KG",
+        "categorie": "Fruits secs",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "burger_pane_kasbah",
+        "qualite_score": 5,
+        "quantite_normalisee": 2500,
+        "categorie_canonique": "fruits secs",
+        "nom_normalise": "burger pane kasbah",
+        "product_key": "33e5559d3697",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "burger",
+            "kasbah",
+            "pane"
+        ]
+    },
+    {
+        "nom": "Chili Cheese Nuggets Leduc 1 kg",
+        "prix": 120.0,
+        "quantite": "1 KG",
+        "categorie": "Fruits secs",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "chili_cheese_nuggets_leduc",
+        "qualite_score": 5,
+        "quantite_normalisee": 1000,
+        "categorie_canonique": "fruits secs",
+        "nom_normalise": "chili cheese nuggets leduc",
+        "product_key": "0307b2325305",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "cheese",
+            "chili",
+            "leduc",
+            "nuggets"
+        ]
+    },
+    {
+        "nom": "Thon Filet Tamima 1,7 KG",
+        "prix": 130.0,
+        "quantite": "1,7 KG",
+        "categorie": "Conserves",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "thon_filet_tamima",
+        "qualite_score": 5,
+        "quantite_normalisee": 1700,
+        "categorie_canonique": "conserves",
+        "nom_normalise": "thon filet tamima",
+        "product_key": "a51effbea4b3",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "filet",
+            "tamima",
+            "thon"
+        ]
+    },
+    {
+        "nom": "Thon Tamima A L'huile 80 G",
+        "prix": 7.0,
+        "quantite": "80 G",
+        "categorie": "Conserves",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "thon_tamima_huile",
+        "qualite_score": 5,
+        "quantite_normalisee": 80,
+        "categorie_canonique": "conserves",
+        "nom_normalise": "thon tamima a l huile",
+        "product_key": "2c311b697ee5",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "a",
+            "huile",
+            "l",
+            "tamima",
+            "thon"
+        ]
+    },
+    {
+        "nom": "Tomate Concentre Aicha 4/4",
+        "prix": 32.0,
+        "quantite": "1 unité",
+        "categorie": "Conserves",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "tomate_concentre_aicha",
+        "qualite_score": 5,
+        "quantite_normalisee": null,
+        "categorie_canonique": "conserves",
+        "nom_normalise": "tomate concentre aicha 4",
+        "product_key": "97f29494c909",
+        "cleaning_confidence": 90,
+        "matching_tokens": [
+            "4",
+            "aicha",
+            "concentre",
+            "tomate"
+        ]
     }
 ]

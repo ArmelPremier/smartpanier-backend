@@ -4,11 +4,18 @@ import re
 
 
 CATEGORY_URLS = [
+    # Page 1
     "https://marketpro.ma/product-category/epicerie/fruits-secs/",
     "https://marketpro.ma/product-category/epicerie/conserves/",
     "https://marketpro.ma/product-category/epicerie/epices/",
     "https://marketpro.ma/product-category/epicerie/huilevinaigre/",
-    "https://marketpro.ma/product-category/epicerie/pates-et-riz/"
+    "https://marketpro.ma/product-category/epicerie/pates-et-riz/",
+    # Page 2
+    "https://marketpro.ma/product-category/epicerie/fruits-secs/page/2/",
+    "https://marketpro.ma/product-category/epicerie/conserves/page/2/",
+    "https://marketpro.ma/product-category/epicerie/epices/page/2/",
+    "https://marketpro.ma/product-category/epicerie/huilevinaigre/page/2/",
+    "https://marketpro.ma/product-category/epicerie/pates-et-riz/page/2/",
 ]
 
 HEADERS = {
