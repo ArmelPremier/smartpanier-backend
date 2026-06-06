@@ -4,17 +4,19 @@ from jose import jwt, JWTError
 from datetime import datetime, timedelta
 from passlib.context import CryptContext
 
-from app.database import SessionLocal
+from sqlalchemy.orm import Session
+
+from app.database import get_db
 from app.models import Utilisateur
+from app.config import (SECRET_KEY,ALGORITHM,ACCESS_TOKEN_EXPIRE_MINUTES,REFRESH_TOKEN_EXPIRE_DAYS)
 
 
 # =========================
-# 🔐 CONFIG JWT
+# 🔒 VALIDATION CONFIG
 # =========================
 
-SECRET_KEY = "secret"
-ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_HOURS = 2
+if not SECRET_KEY:
+    raise Exception("SECRET_KEY manquante dans .env")
 
 
 # =========================
@@ -25,50 +27,38 @@ security = HTTPBearer()
 
 
 # =========================
-# 🔒 PASSWORD HASH
+# 🔒 PASSWORD HASHING
 # =========================
 
-pwd_context = CryptContext(
-    schemes=["bcrypt"],
-    deprecated="auto"
-)
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 
-def hash_password(password: str):
+def hash_password(password: str) -> str:
     return pwd_context.hash(password)
 
 
-def verify_password(
-    plain_password: str,
-    hashed_password: str
-):
-    return pwd_context.verify(
-        plain_password,
-        hashed_password
-    )
+def verify_password(plain_password: str, hashed_password: str) -> bool:
+    return pwd_context.verify(plain_password, hashed_password)
 
 
 # =========================
-# 🔑 CREATE TOKEN
+# 🔑 CREATE JWT TOKEN
 # =========================
 
-def create_token(data: dict):
-
-    to_encode = data.copy()
+def create_access_token(data: dict):
+    payload = data.copy()
 
     expire = datetime.utcnow() + timedelta(
-        hours=ACCESS_TOKEN_EXPIRE_HOURS
+        minutes=ACCESS_TOKEN_EXPIRE_MINUTES
     )
 
-    to_encode.update({
-        "exp": expire
+    payload.update({
+        "exp": expire,
+        "iat": datetime.utcnow(),
+        "type": "access"
     })
 
-    return jwt.encode(
-        to_encode,
-        SECRET_KEY,
-        algorithm=ALGORITHM
-    )
+    return jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
 
 
 # =========================
@@ -76,18 +66,33 @@ def create_token(data: dict):
 # =========================
 
 def decode_token(token: str):
+    try:
+        return jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+    except JWTError:
+        return None
+    
+def verify_refresh_token(refresh_token: str):
 
     try:
         payload = jwt.decode(
-            token,
+            refresh_token,
             SECRET_KEY,
             algorithms=[ALGORITHM]
         )
 
+        if payload.get("type") != "refresh":
+            raise HTTPException(
+                status_code=401,
+                detail="Refresh token invalide"
+            )
+
         return payload
 
     except JWTError:
-        return None
+        raise HTTPException(
+            status_code=401,
+            detail="Refresh token expiré ou invalide"
+        )
 
 
 # =========================
@@ -95,39 +100,60 @@ def decode_token(token: str):
 # =========================
 
 def get_current_user(
-    credentials: HTTPAuthorizationCredentials = Depends(security)
+    credentials: HTTPAuthorizationCredentials = Depends(security),
+    db: Session = Depends(get_db)
 ):
 
     token = credentials.credentials
 
     try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
 
-        payload = jwt.decode(
-            token,
-            SECRET_KEY,
-            algorithms=[ALGORITHM]
-        )
+        token_type = payload.get("type")
+
+        if token_type != "access":
+            raise HTTPException(
+                status_code=401,
+                detail="Access token requis"
+            )
 
         email = payload.get("sub")
 
-    except JWTError:
+        if not email:
+            raise HTTPException(
+                status_code=401,
+                detail="Token invalide"
+            )
 
+    except JWTError:
         raise HTTPException(
             status_code=401,
-            detail="Token invalide"
+            detail="Token invalide ou expiré"
         )
-
-    db = SessionLocal()
 
     user = db.query(Utilisateur).filter(
         Utilisateur.email_utilisateur == email
     ).first()
 
     if not user:
-
         raise HTTPException(
             status_code=401,
-            detail="Utilisateur non trouvé"
+            detail="Utilisateur introuvable"
         )
 
     return user
+
+def create_refresh_token(data: dict):
+    payload = data.copy()
+
+    expire = datetime.utcnow() + timedelta(
+        days=REFRESH_TOKEN_EXPIRE_DAYS
+    )
+
+    payload.update({
+        "exp": expire,
+        "iat": datetime.utcnow(),
+        "type": "refresh"
+    })
+
+    return jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)

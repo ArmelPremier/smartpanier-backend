@@ -1,11 +1,12 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from typing import List
+from typing import List, Optional
 
 from app.database import get_db
 from app.models import *
-from app.schemas import ProduitCreate, ProduitResponse
+from app.schemas import ProduitCreate, ProduitResponse, AlternativeProduitResponse
 from app.utils.security import get_current_user
+from app.services.recommendation_service import trouver_alternatives
 
 router = APIRouter(prefix="/produits", tags=["Produits"])
 
@@ -67,33 +68,24 @@ def get_quantites(id_liste: int, db: Session = Depends(get_db)):
         for l in lignes
     ]
 
-@router.get("/historique")
-def historique(db: Session = Depends(get_db),
-               current_user: Utilisateur = Depends(get_current_user)):
 
-    listes = db.query(ListeCourses).filter(
-        ListeCourses.id_utilisateur == current_user.id_utilisateur
-    ).all()
 
-    return listes
+@router.get(
+    "/{id}/alternatives",
+    response_model=List[AlternativeProduitResponse],
+    summary="Alternatives à un produit",
+    description="Retourne jusqu'à 3 produits alternatifs dans la même catégorie, triés par prix croissant."
+)
+def get_alternatives(
+    id: int,
+    budget_max: Optional[float] = None,
+    db: Session = Depends(get_db)
+):
+    produit = db.query(Produit).filter(Produit.id_produit == id).first()
+    if not produit:
+        raise HTTPException(status_code=404, detail="Produit non trouvé")
+    return trouver_alternatives(db, produit, budget_max)
 
-@router.get("/dernier-panier")
-def dernier_panier(db: Session = Depends(get_db),
-                   current_user: Utilisateur = Depends(get_current_user)):
-
-    dernier = db.query(PanierOptimise)\
-        .join(ListeCourses)\
-        .filter(ListeCourses.id_utilisateur == current_user.id_utilisateur)\
-        .order_by(PanierOptimise.id_panieroptimise.desc())\
-        .first()
-
-    if not dernier:
-        raise HTTPException(404, "Aucun panier")
-
-    return {
-        "total": dernier.total_panieroptimise,
-        "economie": dernier.economie
-    }
 
 @router.get("/me")
 def get_profile(current_user: Utilisateur = Depends(get_current_user)):

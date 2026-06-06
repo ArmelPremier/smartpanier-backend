@@ -1,0 +1,1065 @@
+[
+    {
+        "nom": "Abricots Secs Au kg",
+        "prix": 125.0,
+        "quantite": "1 KG",
+        "categorie": "Fruits secs",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "abricot_secs",
+        "qualite_score": 5,
+        "quantite_normalisee": 1000,
+        "categorie_canonique": "fruits secs",
+        "nom_normalise": "abricot secs",
+        "product_key": "0a7a6a67d776",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "abricot",
+            "secs"
+        ]
+    },
+    {
+        "nom": "Amandes Au kg",
+        "prix": 90.0,
+        "quantite": "1 KG",
+        "categorie": "Fruits secs",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "amande",
+        "qualite_score": 5,
+        "quantite_normalisee": 1000,
+        "categorie_canonique": "fruits secs",
+        "nom_normalise": "amande",
+        "product_key": "c4c2cd4e205a",
+        "cleaning_confidence": 85,
+        "matching_tokens": [
+            "amande"
+        ]
+    },
+    {
+        "nom": "Cacahuètes Rouges Au kg",
+        "prix": 35.0,
+        "quantite": "1 KG",
+        "categorie": "Fruits secs",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "cacahuete_rouges",
+        "qualite_score": 5,
+        "quantite_normalisee": 1000,
+        "categorie_canonique": "fruits secs",
+        "nom_normalise": "cacahuete rouges",
+        "product_key": "cef87fd40def",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "cacahuete",
+            "rouges"
+        ]
+    },
+    {
+        "nom": "Figue Séchée Au kg",
+        "prix": 94.0,
+        "quantite": "1 KG",
+        "categorie": "Fruits secs",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "figue_seche",
+        "qualite_score": 5,
+        "quantite_normalisee": 1000,
+        "categorie_canonique": "fruits secs",
+        "nom_normalise": "figue seche",
+        "product_key": "6d2e49737545",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "figue",
+            "seche"
+        ]
+    },
+    {
+        "nom": "Noix sans coquilles au kg",
+        "prix": 100.0,
+        "quantite": "1 KG",
+        "categorie": "Fruits secs",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "noix_sans_coquilles",
+        "qualite_score": 5,
+        "quantite_normalisee": 1000,
+        "categorie_canonique": "fruits secs",
+        "nom_normalise": "noix sans coquilles",
+        "product_key": "2df9ad38a75b",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "coquilles",
+            "noix",
+            "sans"
+        ]
+    },
+    {
+        "nom": "Pistache au kg",
+        "prix": 144.0,
+        "quantite": "1 KG",
+        "categorie": "Fruits secs",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "pistache",
+        "qualite_score": 5,
+        "quantite_normalisee": 1000,
+        "categorie_canonique": "fruits secs",
+        "nom_normalise": "pistache",
+        "product_key": "ac9f844e9d47",
+        "cleaning_confidence": 85,
+        "matching_tokens": [
+            "pistache"
+        ]
+    },
+    {
+        "nom": "Pruneaux Secs Au kg",
+        "prix": 57.0,
+        "quantite": "1 KG",
+        "categorie": "Fruits secs",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "pruneaux_secs",
+        "qualite_score": 5,
+        "quantite_normalisee": 1000,
+        "categorie_canonique": "fruits secs",
+        "nom_normalise": "pruneaux secs",
+        "product_key": "6d81cc854ef2",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "pruneaux",
+            "secs"
+        ]
+    },
+    {
+        "nom": "Raisins Secs Au kg",
+        "prix": 41.0,
+        "quantite": "1 KG",
+        "categorie": "Fruits secs",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "raisin_secs",
+        "qualite_score": 5,
+        "quantite_normalisee": 1000,
+        "categorie_canonique": "fruits secs",
+        "nom_normalise": "raisin secs",
+        "product_key": "c27e80065c81",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "raisin",
+            "secs"
+        ]
+    },
+    {
+        "nom": "Ananas en Tranches Delcielo 4/4",
+        "prix": 35.0,
+        "quantite": "1 unité",
+        "categorie": "Conserves",
+        "magasin": "MarketPro",
+        "marque": "Delcielo",
+        "code_normalise": "ananas_tranches",
+        "qualite_score": 5,
+        "quantite_normalisee": null,
+        "categorie_canonique": "conserves",
+        "nom_normalise": "ananas tranches 4",
+        "product_key": "3dfd6f460c21",
+        "cleaning_confidence": 90,
+        "matching_tokens": [
+            "4",
+            "ananas",
+            "tranches"
+        ]
+    },
+    {
+        "nom": "Capres Goldy 850G",
+        "prix": 35.5,
+        "quantite": "850G",
+        "categorie": "Conserves",
+        "magasin": "MarketPro",
+        "marque": "Goldy",
+        "code_normalise": "capres",
+        "qualite_score": 5,
+        "quantite_normalisee": 850,
+        "categorie_canonique": "conserves",
+        "nom_normalise": "capres",
+        "product_key": "ae7bc3a5b74a",
+        "cleaning_confidence": 85,
+        "matching_tokens": [
+            "capres"
+        ]
+    },
+    {
+        "nom": "Champignons Delcielo 4/4",
+        "prix": 16.0,
+        "quantite": "1 unité",
+        "categorie": "Conserves",
+        "magasin": "MarketPro",
+        "marque": "Delcielo",
+        "code_normalise": "champignons",
+        "qualite_score": 5,
+        "quantite_normalisee": null,
+        "categorie_canonique": "conserves",
+        "nom_normalise": "champignons 4",
+        "product_key": "2e3188be5ccb",
+        "cleaning_confidence": 90,
+        "matching_tokens": [
+            "4",
+            "champignons"
+        ]
+    },
+    {
+        "nom": "Cornichon Pikarome 5/1",
+        "prix": 72.0,
+        "quantite": "1 unité",
+        "categorie": "Conserves",
+        "magasin": "MarketPro",
+        "marque": "Pikarome",
+        "code_normalise": "cornichon",
+        "qualite_score": 5,
+        "quantite_normalisee": null,
+        "categorie_canonique": "conserves",
+        "nom_normalise": "cornichon 5 1",
+        "product_key": "1759cddf6ac9",
+        "cleaning_confidence": 90,
+        "matching_tokens": [
+            "1",
+            "5",
+            "cornichon"
+        ]
+    },
+    {
+        "nom": "Cornichon Pikarome 670 g",
+        "prix": 21.0,
+        "quantite": "670 G",
+        "categorie": "Conserves",
+        "magasin": "MarketPro",
+        "marque": "Pikarome",
+        "code_normalise": "cornichon",
+        "qualite_score": 5,
+        "quantite_normalisee": 670,
+        "categorie_canonique": "conserves",
+        "nom_normalise": "cornichon",
+        "product_key": "2aac25404f0e",
+        "cleaning_confidence": 85,
+        "matching_tokens": [
+            "cornichon"
+        ]
+    },
+    {
+        "nom": "Demi Glace Ideal 605 G",
+        "prix": 75.0,
+        "quantite": "605 G",
+        "categorie": "Conserves",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "demi_glace_ideal",
+        "qualite_score": 5,
+        "quantite_normalisee": 605,
+        "categorie_canonique": "conserves",
+        "nom_normalise": "demi glace ideal",
+        "product_key": "022e24bf917c",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "demi",
+            "glace",
+            "ideal"
+        ]
+    },
+    {
+        "nom": "Demi Peche Delcielo 4/4",
+        "prix": 24.0,
+        "quantite": "1 unité",
+        "categorie": "Conserves",
+        "magasin": "MarketPro",
+        "marque": "Delcielo",
+        "code_normalise": "demi_peche",
+        "qualite_score": 5,
+        "quantite_normalisee": null,
+        "categorie_canonique": "conserves",
+        "nom_normalise": "demi peche 4",
+        "product_key": "e29ee0344ba0",
+        "cleaning_confidence": 90,
+        "matching_tokens": [
+            "4",
+            "demi",
+            "peche"
+        ]
+    },
+    {
+        "nom": "Demi Pêches Mido 500g",
+        "prix": 28.5,
+        "quantite": "500G",
+        "categorie": "Conserves",
+        "magasin": "MarketPro",
+        "marque": "Mido",
+        "code_normalise": "demi_peches",
+        "qualite_score": 5,
+        "quantite_normalisee": 500,
+        "categorie_canonique": "conserves",
+        "nom_normalise": "demi peches",
+        "product_key": "2d1be1ebb780",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "demi",
+            "peches"
+        ]
+    },
+    {
+        "nom": "Haricots Rouges Mido 800 G",
+        "prix": 24.0,
+        "quantite": "800 G",
+        "categorie": "Conserves",
+        "magasin": "MarketPro",
+        "marque": "Mido",
+        "code_normalise": "haricots_rouges",
+        "qualite_score": 5,
+        "quantite_normalisee": 800,
+        "categorie_canonique": "conserves",
+        "nom_normalise": "haricots rouges",
+        "product_key": "d812a7d258e8",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "haricots",
+            "rouges"
+        ]
+    },
+    {
+        "nom": "Maïs Delcielo 2,5 KG",
+        "prix": 62.5,
+        "quantite": "2,5 KG",
+        "categorie": "Conserves",
+        "magasin": "MarketPro",
+        "marque": "Delcielo",
+        "code_normalise": "mais",
+        "qualite_score": 5,
+        "quantite_normalisee": 2500,
+        "categorie_canonique": "conserves",
+        "nom_normalise": "mais",
+        "product_key": "18f97c457efd",
+        "cleaning_confidence": 85,
+        "matching_tokens": [
+            "mais"
+        ]
+    },
+    {
+        "nom": "Maïs Delcielo 4/4",
+        "prix": 18.0,
+        "quantite": "1 unité",
+        "categorie": "Conserves",
+        "magasin": "MarketPro",
+        "marque": "Delcielo",
+        "code_normalise": "mais",
+        "qualite_score": 5,
+        "quantite_normalisee": null,
+        "categorie_canonique": "conserves",
+        "nom_normalise": "mais 4",
+        "product_key": "45dc24132bd0",
+        "cleaning_confidence": 90,
+        "matching_tokens": [
+            "4",
+            "mais"
+        ]
+    },
+    {
+        "nom": "Moutarde a L'ancienne Star 190 G",
+        "prix": 11.0,
+        "quantite": "190 G",
+        "categorie": "Conserves",
+        "magasin": "MarketPro",
+        "marque": "Star",
+        "code_normalise": "moutarde_ancienne",
+        "qualite_score": 5,
+        "quantite_normalisee": 190,
+        "categorie_canonique": "conserves",
+        "nom_normalise": "moutarde a l ancienne",
+        "product_key": "83006d8cf9a1",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "a",
+            "ancienne",
+            "l",
+            "moutarde"
+        ]
+    },
+    {
+        "nom": "Moutarde OK 3,9 KG",
+        "prix": 81.0,
+        "quantite": "3,9 KG",
+        "categorie": "Conserves",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "moutarde_ok",
+        "qualite_score": 5,
+        "quantite_normalisee": 3900,
+        "categorie_canonique": "conserves",
+        "nom_normalise": "moutarde ok",
+        "product_key": "7ceef2615485",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "moutarde",
+            "ok"
+        ]
+    },
+    {
+        "nom": "Olives Noires Rondelles Siof 3000 GRS",
+        "prix": 67.0,
+        "quantite": "3000 G",
+        "categorie": "Conserves",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "olives_noires_rondelles_siof",
+        "qualite_score": 5,
+        "quantite_normalisee": 3000,
+        "categorie_canonique": "conserves",
+        "nom_normalise": "olives noires rondelles siof",
+        "product_key": "d1c8db5b8e35",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "noires",
+            "olives",
+            "rondelles",
+            "siof"
+        ]
+    },
+    {
+        "nom": "Petits Poids Mido  800 G",
+        "prix": 25.5,
+        "quantite": "800 G",
+        "categorie": "Conserves",
+        "magasin": "MarketPro",
+        "marque": "Mido",
+        "code_normalise": "petits_poids",
+        "qualite_score": 5,
+        "quantite_normalisee": 800,
+        "categorie_canonique": "conserves",
+        "nom_normalise": "petits poids",
+        "product_key": "f49a65343536",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "petits",
+            "poids"
+        ]
+    },
+    {
+        "nom": "Poivre Vert Bangor 4/4 - 500G",
+        "prix": 72.5,
+        "quantite": "500G",
+        "categorie": "Conserves",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "poivre_vert_bangor",
+        "qualite_score": 5,
+        "quantite_normalisee": 500,
+        "categorie_canonique": "conserves",
+        "nom_normalise": "poivre vert bangor 4",
+        "product_key": "5a4033f3d84c",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "4",
+            "bangor",
+            "poivre",
+            "vert"
+        ]
+    },
+    {
+        "nom": "Sauce Pizza du Chef 4 kg",
+        "prix": 85.0,
+        "quantite": "4 KG",
+        "categorie": "Conserves",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "sauce_pizza",
+        "qualite_score": 5,
+        "quantite_normalisee": 4000,
+        "categorie_canonique": "conserves",
+        "nom_normalise": "sauce pizza",
+        "product_key": "1067b2e7dbae",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "pizza",
+            "sauce"
+        ]
+    },
+    {
+        "nom": "Sauce Pizza Star 5/1",
+        "prix": 68.0,
+        "quantite": "1 unité",
+        "categorie": "Conserves",
+        "magasin": "MarketPro",
+        "marque": "Star",
+        "code_normalise": "sauce_pizza",
+        "qualite_score": 5,
+        "quantite_normalisee": null,
+        "categorie_canonique": "conserves",
+        "nom_normalise": "sauce pizza 5 1",
+        "product_key": "4f750cf98e38",
+        "cleaning_confidence": 90,
+        "matching_tokens": [
+            "1",
+            "5",
+            "pizza",
+            "sauce"
+        ]
+    },
+    {
+        "nom": "Thon Caly Bonite 1700 g",
+        "prix": 115.0,
+        "quantite": "1700 G",
+        "categorie": "Conserves",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "thon_caly_bonite",
+        "qualite_score": 5,
+        "quantite_normalisee": 1700,
+        "categorie_canonique": "conserves",
+        "nom_normalise": "thon caly bonite",
+        "product_key": "e8bd55028b66",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "bonite",
+            "caly",
+            "thon"
+        ]
+    },
+    {
+        "nom": "Thon Filet Chellah 1,7 Kg",
+        "prix": 130.0,
+        "quantite": "1,7 KG",
+        "categorie": "Conserves",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "thon_filet_chellah",
+        "qualite_score": 5,
+        "quantite_normalisee": 1700,
+        "categorie_canonique": "conserves",
+        "nom_normalise": "thon filet chellah",
+        "product_key": "b774eba37940",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "chellah",
+            "filet",
+            "thon"
+        ]
+    },
+    {
+        "nom": "Ail Rouge au kg",
+        "prix": 54.0,
+        "quantite": "1 KG",
+        "categorie": "Épices",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "ail_rouge",
+        "qualite_score": 5,
+        "quantite_normalisee": 1000,
+        "categorie_canonique": "epices",
+        "nom_normalise": "ail rouge",
+        "product_key": "640712e08a5e",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "ail",
+            "rouge"
+        ]
+    },
+    {
+        "nom": "Cannelle moulue au kg",
+        "prix": 56.0,
+        "quantite": "1 KG",
+        "categorie": "Épices",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "cannelle_moulue",
+        "qualite_score": 5,
+        "quantite_normalisee": 1000,
+        "categorie_canonique": "epices",
+        "nom_normalise": "cannelle moulue",
+        "product_key": "c9c64b7da42c",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "cannelle",
+            "moulue"
+        ]
+    },
+    {
+        "nom": "Chiken Shawarma Spices 150 G",
+        "prix": 13.5,
+        "quantite": "150 G",
+        "categorie": "Épices",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "chiken_shawarma_spices",
+        "qualite_score": 5,
+        "quantite_normalisee": 150,
+        "categorie_canonique": "epices",
+        "nom_normalise": "chiken shawarma spices",
+        "product_key": "2fd4a7a3a255",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "chiken",
+            "shawarma",
+            "spices"
+        ]
+    },
+    {
+        "nom": "Cumin Moulu au KG",
+        "prix": 69.0,
+        "quantite": "1 KG",
+        "categorie": "Épices",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "cumin_moulu",
+        "qualite_score": 5,
+        "quantite_normalisee": 1000,
+        "categorie_canonique": "epices",
+        "nom_normalise": "cumin moulu",
+        "product_key": "e5aed7fe2f0a",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "cumin",
+            "moulu"
+        ]
+    },
+    {
+        "nom": "Curcuma Moulu au KG",
+        "prix": 40.0,
+        "quantite": "1 KG",
+        "categorie": "Épices",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "curcuma_moulu",
+        "qualite_score": 5,
+        "quantite_normalisee": 1000,
+        "categorie_canonique": "epices",
+        "nom_normalise": "curcuma moulu",
+        "product_key": "8e7ddedefb1a",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "curcuma",
+            "moulu"
+        ]
+    },
+    {
+        "nom": "Gingembre Moulu au KG",
+        "prix": 82.0,
+        "quantite": "1 KG",
+        "categorie": "Épices",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "gingembre_moulu",
+        "qualite_score": 5,
+        "quantite_normalisee": 1000,
+        "categorie_canonique": "epices",
+        "nom_normalise": "gingembre moulu",
+        "product_key": "ed8be8e9e414",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "gingembre",
+            "moulu"
+        ]
+    },
+    {
+        "nom": "Halabi Zaatar 500 G",
+        "prix": 17.0,
+        "quantite": "500 G",
+        "categorie": "Épices",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "bi_zaatar",
+        "qualite_score": 5,
+        "quantite_normalisee": 500,
+        "categorie_canonique": "epices",
+        "nom_normalise": "bi zaatar",
+        "product_key": "e7049d637d45",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "bi",
+            "zaatar"
+        ]
+    },
+    {
+        "nom": "Meat Spices Shawarma 150 G",
+        "prix": 13.5,
+        "quantite": "150 G",
+        "categorie": "Épices",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "meat_spices_shawarma",
+        "qualite_score": 5,
+        "quantite_normalisee": 150,
+        "categorie_canonique": "epices",
+        "nom_normalise": "meat spices shawarma",
+        "product_key": "47ab73abd6f3",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "meat",
+            "shawarma",
+            "spices"
+        ]
+    },
+    {
+        "nom": "Piment Doux Moulu au KG",
+        "prix": 55.0,
+        "quantite": "1 KG",
+        "categorie": "Épices",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "piment_doux_moulu",
+        "qualite_score": 5,
+        "quantite_normalisee": 1000,
+        "categorie_canonique": "epices",
+        "nom_normalise": "piment doux moulu",
+        "product_key": "8cae87e4900d",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "doux",
+            "moulu",
+            "piment"
+        ]
+    },
+    {
+        "nom": "Piment Fort Moulu au KG",
+        "prix": 38.0,
+        "quantite": "1 KG",
+        "categorie": "Épices",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "piment_fort_moulu",
+        "qualite_score": 5,
+        "quantite_normalisee": 1000,
+        "categorie_canonique": "epices",
+        "nom_normalise": "piment fort moulu",
+        "product_key": "cbb97c1ffeae",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "fort",
+            "moulu",
+            "piment"
+        ]
+    },
+    {
+        "nom": "Poivre Noir Moulu au KG",
+        "prix": 100.0,
+        "quantite": "1 KG",
+        "categorie": "Épices",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "poivre_noir_moulu",
+        "qualite_score": 5,
+        "quantite_normalisee": 1000,
+        "categorie_canonique": "epices",
+        "nom_normalise": "poivre noir moulu",
+        "product_key": "f762c09e05f2",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "moulu",
+            "noir",
+            "poivre"
+        ]
+    },
+    {
+        "nom": "Sel De Table Pikarome 400 g",
+        "prix": 5.5,
+        "quantite": "400 G",
+        "categorie": "Épices",
+        "magasin": "MarketPro",
+        "marque": "Pikarome",
+        "code_normalise": "sel_table",
+        "qualite_score": 5,
+        "quantite_normalisee": 400,
+        "categorie_canonique": "epices",
+        "nom_normalise": "sel table",
+        "product_key": "2d2f65836b37",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "sel",
+            "table"
+        ]
+    },
+    {
+        "nom": "Seven Spices Baharat 7  150 G",
+        "prix": 15.5,
+        "quantite": "150 G",
+        "categorie": "Épices",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "seven_spices_baharat",
+        "qualite_score": 5,
+        "quantite_normalisee": 150,
+        "categorie_canonique": "epices",
+        "nom_normalise": "seven spices baharat 7",
+        "product_key": "c72fd67f94f7",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "7",
+            "baharat",
+            "seven",
+            "spices"
+        ]
+    },
+    {
+        "nom": "Sumac Jordan 150 G",
+        "prix": 42.5,
+        "quantite": "150 G",
+        "categorie": "Épices",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "sumac_jordan",
+        "qualite_score": 5,
+        "quantite_normalisee": 150,
+        "categorie_canonique": "epices",
+        "nom_normalise": "sumac jordan",
+        "product_key": "f126faff2090",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "jordan",
+            "sumac"
+        ]
+    },
+    {
+        "nom": "Frity's en Bidon de 10 Litres en PET",
+        "prix": 230.0,
+        "quantite": "10 L",
+        "categorie": "Huiles",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "frity_bidon_10_litres_pet",
+        "qualite_score": 5,
+        "quantite_normalisee": 10000,
+        "categorie_canonique": "huiles",
+        "nom_normalise": "frity s bidon 10 litres pet",
+        "product_key": "eafb2123b049",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "10",
+            "bidon",
+            "frity",
+            "litres",
+            "pet",
+            "s"
+        ]
+    },
+    {
+        "nom": "Huile d'olive Alhora 1L",
+        "prix": 75.0,
+        "quantite": "1L",
+        "categorie": "Huiles",
+        "magasin": "MarketPro",
+        "marque": "Alhora",
+        "code_normalise": "huile_olive",
+        "qualite_score": 5,
+        "quantite_normalisee": 1000,
+        "categorie_canonique": "huiles",
+        "nom_normalise": "huile olive",
+        "product_key": "414e723f34ad",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "huile",
+            "olive"
+        ]
+    },
+    {
+        "nom": "Huile de Table Lio 5 L",
+        "prix": 85.0,
+        "quantite": "5 L",
+        "categorie": "Huiles",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "huile_table_lio",
+        "qualite_score": 5,
+        "quantite_normalisee": 5000,
+        "categorie_canonique": "huiles",
+        "nom_normalise": "huile table lio",
+        "product_key": "3c1dbf376eaf",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "huile",
+            "lio",
+            "table"
+        ]
+    },
+    {
+        "nom": "Huile Louza 10 L",
+        "prix": 168.0,
+        "quantite": "10 L",
+        "categorie": "Huiles",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "huile_louza",
+        "qualite_score": 5,
+        "quantite_normalisee": 10000,
+        "categorie_canonique": "huiles",
+        "nom_normalise": "huile louza",
+        "product_key": "5a49c0b853b2",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "huile",
+            "louza"
+        ]
+    },
+    {
+        "nom": "Vinaigre Dessaux  50 CL",
+        "prix": 3.0,
+        "quantite": "50 CL",
+        "categorie": "Huiles",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "vinaigre_dessaux",
+        "qualite_score": 5,
+        "quantite_normalisee": 500,
+        "categorie_canonique": "huiles",
+        "nom_normalise": "vinaigre dessaux",
+        "product_key": "715e9551d25c",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "dessaux",
+            "vinaigre"
+        ]
+    },
+    {
+        "nom": "Vinaigre Dessaux Vcr 5L",
+        "prix": 29.5,
+        "quantite": "5L",
+        "categorie": "Huiles",
+        "magasin": "MarketPro",
+        "marque": null,
+        "code_normalise": "vinaigre_dessaux_vcr",
+        "qualite_score": 5,
+        "quantite_normalisee": 5000,
+        "categorie_canonique": "huiles",
+        "nom_normalise": "vinaigre dessaux vcr",
+        "product_key": "ebe328d0a33b",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "dessaux",
+            "vcr",
+            "vinaigre"
+        ]
+    },
+    {
+        "nom": "Cigala Orange 5 KG",
+        "prix": 108.0,
+        "quantite": "5 KG",
+        "categorie": "Pâtes et Riz",
+        "magasin": "MarketPro",
+        "marque": "Cigala",
+        "code_normalise": "orange",
+        "qualite_score": 5,
+        "quantite_normalisee": 5000,
+        "categorie_canonique": "feculents",
+        "nom_normalise": "orange",
+        "product_key": "405fc0de28cd",
+        "cleaning_confidence": 85,
+        "matching_tokens": [
+            "orange"
+        ]
+    },
+    {
+        "nom": "Cigala Rouge 5 KG",
+        "prix": 87.0,
+        "quantite": "5 KG",
+        "categorie": "Pâtes et Riz",
+        "magasin": "MarketPro",
+        "marque": "Cigala",
+        "code_normalise": "rouge",
+        "qualite_score": 5,
+        "quantite_normalisee": 5000,
+        "categorie_canonique": "feculents",
+        "nom_normalise": "rouge",
+        "product_key": "0dd6434d1abe",
+        "cleaning_confidence": 85,
+        "matching_tokens": [
+            "rouge"
+        ]
+    },
+    {
+        "nom": "Penne Divella 500GR",
+        "prix": 15.0,
+        "quantite": "500G",
+        "categorie": "Pâtes et Riz",
+        "magasin": "MarketPro",
+        "marque": "Divella",
+        "code_normalise": "penne",
+        "qualite_score": 5,
+        "quantite_normalisee": 500,
+        "categorie_canonique": "feculents",
+        "nom_normalise": "penne",
+        "product_key": "32f9f1d6ca9c",
+        "cleaning_confidence": 85,
+        "matching_tokens": [
+            "penne"
+        ]
+    },
+    {
+        "nom": "Riz Cigala Orangr 1 KG",
+        "prix": 22.5,
+        "quantite": "1 KG",
+        "categorie": "Pâtes et Riz",
+        "magasin": "MarketPro",
+        "marque": "Cigala",
+        "code_normalise": "riz_orangr",
+        "qualite_score": 5,
+        "quantite_normalisee": 1000,
+        "categorie_canonique": "feculents",
+        "nom_normalise": "riz orangr",
+        "product_key": "56d2080638b7",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "orangr",
+            "riz"
+        ]
+    },
+    {
+        "nom": "Riz Cigala Rouge 1 KG",
+        "prix": 21.0,
+        "quantite": "1 KG",
+        "categorie": "Pâtes et Riz",
+        "magasin": "MarketPro",
+        "marque": "Cigala",
+        "code_normalise": "riz_rouge",
+        "qualite_score": 5,
+        "quantite_normalisee": 1000,
+        "categorie_canonique": "feculents",
+        "nom_normalise": "riz rouge",
+        "product_key": "7df0288d9d7a",
+        "cleaning_confidence": 100,
+        "matching_tokens": [
+            "riz",
+            "rouge"
+        ]
+    },
+    {
+        "nom": "Spaghetti Divella 500GRS",
+        "prix": 15.0,
+        "quantite": "500G",
+        "categorie": "Pâtes et Riz",
+        "magasin": "MarketPro",
+        "marque": "Divella",
+        "code_normalise": "spaghetti",
+        "qualite_score": 5,
+        "quantite_normalisee": 500,
+        "categorie_canonique": "feculents",
+        "nom_normalise": "spaghetti",
+        "product_key": "cee858b5105c",
+        "cleaning_confidence": 85,
+        "matching_tokens": [
+            "spaghetti"
+        ]
+    },
+    {
+        "nom": "Tagliatelle Divella 500g",
+        "prix": 23.0,
+        "quantite": "500G",
+        "categorie": "Pâtes et Riz",
+        "magasin": "MarketPro",
+        "marque": "Divella",
+        "code_normalise": "tagliatelle",
+        "qualite_score": 5,
+        "quantite_normalisee": 500,
+        "categorie_canonique": "feculents",
+        "nom_normalise": "tagliatelle",
+        "product_key": "3b14b521efff",
+        "cleaning_confidence": 85,
+        "matching_tokens": [
+            "tagliatelle"
+        ]
+    }
+]
