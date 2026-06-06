@@ -7,7 +7,11 @@ Le serveur doit tourner sur http://localhost:8000
 import requests
 import json
 import sys
+import io
 import time
+
+# Fix encodage Windows (cp1252 ne supporte pas les caracteres Unicode)
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
 BASE = "http://localhost:8000"
 EMAIL = "test_auto@smartpanier.ma"
