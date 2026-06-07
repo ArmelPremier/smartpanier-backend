@@ -46,7 +46,13 @@ def get_meilleure_offre(offres):
 
 
 def get_pire_offre(offres):
-    return max(offres, key=lambda o: o.prix_offre)
+    # Prend le meilleur prix par magasin, puis retourne le magasin le plus cher.
+    # Evite l'inflation due aux variantes grandes tailles du même produit.
+    store_best = {}
+    for o in offres:
+        if o.id_magasin not in store_best or o.prix_offre < store_best[o.id_magasin].prix_offre:
+            store_best[o.id_magasin] = o
+    return max(store_best.values(), key=lambda o: o.prix_offre)
 
 
 def score_recommande(produit, offre):
