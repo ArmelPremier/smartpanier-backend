@@ -28,7 +28,7 @@ from app.utils.security import get_current_user
 
 router = APIRouter(
     prefix="/listes",
-    tags=["Listes de courses"]
+    tags=["Listes"]
 )
 
 
@@ -112,7 +112,12 @@ def get_mes_listes(
 # 📄 DÉTAIL D’UNE LISTE
 # =====================================================
 
-@router.get("/{liste_id}", response_model=ListeCoursesResponse)
+@router.get(
+    "/{liste_id}",
+    response_model=ListeCoursesResponse,
+    summary="Détail d'une liste",
+    description="Retourne le contenu complet d'une liste de courses (produits + quantités).",
+)
 def get_liste(
     liste_id: int,
     db: Session = Depends(get_db),
@@ -141,7 +146,11 @@ def get_last_liste(db, user_id):
         .first()
     )
 
-@router.get("/me/full")
+@router.get(
+    "/me/full",
+    summary="Profil utilisateur + dernière liste",
+    description="Retourne le profil de l'utilisateur connecté, sa dernière liste et le nombre total de listes.",
+)
 def get_me_full(
     db: Session = Depends(get_db),
     current_user: Utilisateur = Depends(get_current_user)
@@ -185,7 +194,12 @@ def get_me_full(
         "total_listes": total_listes
     }
 
-@router.get("/me/last", response_model=ListeCoursesResponse)
+@router.get(
+    "/me/last",
+    response_model=ListeCoursesResponse,
+    summary="Dernière liste de courses",
+    description="Retourne la liste de courses la plus récemment créée par l'utilisateur connecté.",
+)
 def get_ma_derniere_liste(
     db: Session = Depends(get_db),
     current_user: Utilisateur = Depends(get_current_user)
@@ -221,7 +235,11 @@ def serialize_liste(liste):
 # 🗑️ SUPPRIMER UNE LISTE
 # =====================================================
 
-@router.delete("/{liste_id}")
+@router.delete(
+    "/{liste_id}",
+    summary="Supprimer une liste",
+    description="Supprime définitivement une liste et toutes ses lignes.",
+)
 def delete_liste(
     liste_id: int,
     db: Session = Depends(get_db),
@@ -248,7 +266,12 @@ def delete_liste(
 # ✏️ MODIFIER UNE LISTE
 # =====================================================
 
-@router.put("/{liste_id}", response_model=ListeCoursesResponse)
+@router.put(
+    "/{liste_id}",
+    response_model=ListeCoursesResponse,
+    summary="Modifier une liste",
+    description="Met à jour le nom et/ou le budget d'une liste existante.",
+)
 def update_liste(
     liste_id: int,
     data: ListeCoursesUpdate,
@@ -283,7 +306,11 @@ def update_liste(
 # ➕ AJOUTER PRODUIT À UNE LISTE
 # =====================================================
 
-@router.post("/{liste_id}/produits")
+@router.post(
+    "/{liste_id}/produits",
+    summary="Ajouter un produit à la liste",
+    description="Ajoute un produit avec sa quantité. Si le produit est déjà présent, la quantité est cumulée.",
+)
 def add_produit_to_liste(
     liste_id: int,
     data: AddProduitListeRequest,
@@ -343,7 +370,11 @@ def add_produit_to_liste(
 # ❌ SUPPRIMER PRODUIT D’UNE LISTE
 # =====================================================
 
-@router.delete("/{liste_id}/produits/{id_produit}")
+@router.delete(
+    "/{liste_id}/produits/{id_produit}",
+    summary="Retirer un produit de la liste",
+    description="Supprime une ligne produit de la liste de courses.",
+)
 def remove_produit_from_liste(
     liste_id: int,
     id_produit: int,
@@ -386,7 +417,11 @@ def remove_produit_from_liste(
 # 📄 DUPLIQUER UNE LISTE
 # =====================================================
 
-@router.post("/{liste_id}/duplicate")
+@router.post(
+    "/{liste_id}/duplicate",
+    summary="Dupliquer une liste",
+    description="Crée une copie de la liste avec tous ses produits. La copie porte le nom original suivi de '(copie)'.",
+)
 def duplicate_liste(
     liste_id: int,
     db: Session = Depends(get_db),
@@ -438,7 +473,11 @@ def duplicate_liste(
 # 🧠 OPTIMISER UNE LISTE
 # =====================================================
 
-@router.post("/{liste_id}/optimiser", summary="Optimiser une liste de courses existante")
+@router.post(
+    "/{liste_id}/optimiser",
+    summary="Optimiser une liste existante",
+    description="Lance l'optimisation directement depuis la liste sauvegardée. Le budget utilisé est celui de la liste.",
+)
 def optimiser_liste(
     liste_id: int,
     scenario: str,

@@ -14,10 +14,76 @@ from app.routes import (
     listes
 )
 
+description = """
+## SmartPanier — Comparateur de prix & optimiseur de panier
+
+SmartPanier analyse les prix de **MyMarket** et **MarketPro** pour vous aider à faire
+vos courses au meilleur coût, avec 4 stratégies d'optimisation au choix.
+
+### Fonctionnalités principales
+
+- **Catalogue** : 135 produits scrapés et normalisés, répartis en 7 catégories
+- **Offres multi-magasins** : prix en temps réel dans chaque enseigne
+- **Optimisation** : 4 scénarios (voir section *Optimisation*)
+- **Listes de courses** : créez, gérez et optimisez vos listes personnelles
+- **Historique** : retrouvez toutes vos optimisations passées
+
+### Authentification
+
+Toutes les routes protégées nécessitent un token JWT.
+
+1. `POST /login` → récupère `access_token`
+2. Cliquez sur **Authorize** (cadenas) et entrez : `Bearer <access_token>`
+
+### Scénarios d'optimisation
+
+| Code | Stratégie |
+|------|-----------|
+| `prix_min` | Prix le plus bas, quel que soit le magasin |
+| `mono_2_magasins` | Meilleure combinaison de 1 ou 2 magasins |
+| `budget_strict` | Maximum d'articles dans le budget (tri par prix croissant) |
+| `recommande` | Meilleur rapport qualité / prix |
+"""
+
+tags_metadata = [
+    {
+        "name": "Auth",
+        "description": "Inscription, connexion et gestion du compte utilisateur (JWT).",
+    },
+    {
+        "name": "Produits",
+        "description": "Consultation du catalogue et recherche d'alternatives dans la même catégorie.",
+    },
+    {
+        "name": "Offres",
+        "description": "Prix disponibles par magasin pour un produit donné.",
+    },
+    {
+        "name": "Listes",
+        "description": "Création et gestion des listes de courses personnelles.",
+    },
+    {
+        "name": "Optimisation",
+        "description": "Calcul du panier optimal selon le scénario choisi.",
+    },
+    {
+        "name": "Historique",
+        "description": "Historique des paniers optimisés par liste.",
+    },
+]
+
 app = FastAPI(
     title="SmartPanier API",
-    description="API de comparaison de prix et optimisation de panier",
-    version="1.0.0"
+    description=description,
+    version="1.0.0",
+    openapi_tags=tags_metadata,
+    contact={
+        "name": "SmartPanier — Projet PI HICA",
+        "email": "houenouarmel3@gmail.com",
+    },
+    license_info={
+        "name": "MIT",
+    },
 )
 
 # 🔹 ROUTES

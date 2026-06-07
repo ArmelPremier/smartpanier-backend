@@ -9,7 +9,7 @@ from app.models import (
 
 router = APIRouter(
     prefix="/listes",
-    tags=["Historique Optimisations"]
+    tags=["Historique"]
 )
 
 
@@ -17,7 +17,12 @@ router = APIRouter(
 # 📜 HISTORIQUE DES OPTIMISATIONS D'UNE LISTE
 # =====================================================
 
-@router.get("/{id_liste}/optimisations")
+@router.get(
+    "/{id_liste}/optimisations",
+    summary="Historique des optimisations",
+    description="Retourne toutes les optimisations effectuées sur une liste, triées de la plus récente à la plus ancienne.",
+    tags=["Historique"],
+)
 def get_historique_optimisations(
     id_liste: int,
     db: Session = Depends(get_db)

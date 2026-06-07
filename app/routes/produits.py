@@ -14,7 +14,13 @@ router = APIRouter(prefix="/produits", tags=["Produits"])
 # =========================
 # ✅ CREATE
 # =========================
-@router.post("/", response_model=ProduitResponse)
+@router.post(
+    "/",
+    response_model=ProduitResponse,
+    summary="Ajouter un produit",
+    description="Crée un nouveau produit dans le catalogue (usage interne / admin).",
+    include_in_schema=False,
+)
 def create_produit(produit: ProduitCreate, db: Session = Depends(get_db)):
     new_produit = Produit(
     nom_produit=produit.nom_produit,
@@ -33,7 +39,12 @@ def create_produit(produit: ProduitCreate, db: Session = Depends(get_db)):
 # =========================
 # ✅ GET ALL
 # =========================
-@router.get("/", response_model=List[ProduitResponse])
+@router.get(
+    "/",
+    response_model=List[ProduitResponse],
+    summary="Catalogue complet",
+    description="Retourne tous les produits disponibles triés par catégorie.",
+)
 def get_produits(db: Session = Depends(get_db)):
     produits = db.query(Produit).all()
     return produits
@@ -42,7 +53,12 @@ def get_produits(db: Session = Depends(get_db)):
 # =========================
 # ✅ DELETE
 # =========================
-@router.delete("/{id}")
+@router.delete(
+    "/{id}",
+    summary="Supprimer un produit",
+    description="Supprime un produit du catalogue (usage interne / admin).",
+    include_in_schema=False,
+)
 def delete_produit(id: int, db: Session = Depends(get_db)):
     produit = db.query(Produit).filter(Produit.id_produit == id).first()
 
@@ -54,10 +70,14 @@ def delete_produit(id: int, db: Session = Depends(get_db)):
 
     return {"message": "Produit supprimé"}
 
-@router.get("/liste/{id_liste}/quantites")
+@router.get(
+    "/liste/{id_liste}/quantites",
+    summary="Quantités d'une liste",
+    description="Retourne les produits et quantités d'une liste de courses.",
+)
 def get_quantites(id_liste: int, db: Session = Depends(get_db)):
     lignes = db.query(LigneListeCourses).filter(
-        LigneListeCourses.id_listecourses == id_liste
+        LigneListeCourses.id_liste == id_liste
     ).all()
 
     return [
@@ -87,19 +107,17 @@ def get_alternatives(
     return trouver_alternatives(db, produit, budget_max)
 
 
-@router.get("/me")
+@router.get("/me", include_in_schema=False)
 def get_profile(current_user: Utilisateur = Depends(get_current_user)):
     return {
         "nom": current_user.nom_utilisateur,
         "email": current_user.email_utilisateur
     }
 
-@router.put("/me")
+@router.put("/me", include_in_schema=False)
 def update_profile(nom: str, db: Session = Depends(get_db),
                    current_user: Utilisateur = Depends(get_current_user)):
-
     current_user.nom_utilisateur = nom
     db.commit()
-
     return {"message": "Profil mis à jour"}
 
