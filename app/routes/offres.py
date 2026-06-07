@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 from typing import List
 
 from app.database import get_db
@@ -21,7 +21,7 @@ router = APIRouter(
     description="Retourne la liste des offres disponibles (magasin + prix) pour un produit donné."
 )
 def get_offres(produit_id: int, db: Session = Depends(get_db)):
-    offres = db.query(Offre).filter(
+    offres = db.query(Offre).options(joinedload(Offre.magasin)).filter(
         Offre.id_produit == produit_id,
         Offre.stock > 0
     ).all()

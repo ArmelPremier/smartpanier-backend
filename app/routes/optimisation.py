@@ -21,24 +21,38 @@ router = APIRouter(prefix="", tags=["Optimisation"])
 # HELPERS
 # =====================================================
 
-def get_produit(db, id_produit):
-    return db.query(Produit).filter(
-        Produit.id_produit == id_produit
-    ).first()
+def get_meilleure_offre_mag(offres_par_mag, id_produit, id_magasin):
+    offres = offres_par_mag.get((id_produit, id_magasin), [])
+    return min(offres, key=lambda o: o.prix_offre) if offres else None
 
 
-def get_magasin_nom(db, id_magasin):
-    m = db.query(Magasin).filter(
-        Magasin.id_magasin == id_magasin
-    ).first()
-    return m.nom_magasin if m else "Inconnu"
+def preload_data(data, db):
+    """
+    Charge produits, offres et magasins en 3 requêtes bulk.
+    Retourne : produits_map, offres_map, offres_par_mag, magasins_list, magasins_map
+    """
+    ids = [item.id_produit for item in data.produits]
 
+    produits_map = {
+        p.id_produit: p
+        for p in db.query(Produit).filter(Produit.id_produit.in_(ids)).all()
+    }
 
-def get_offres(db, id_produit):
-    return db.query(Offre).filter(
-        Offre.id_produit == id_produit,
-        Offre.stock > 0
-    ).all()
+    all_offres = (
+        db.query(Offre)
+        .filter(Offre.id_produit.in_(ids), Offre.stock > 0)
+        .all()
+    )
+    offres_map = {}       # id_produit → [offres]
+    offres_par_mag = {}   # (id_produit, id_magasin) → [offres]
+    for o in all_offres:
+        offres_map.setdefault(o.id_produit, []).append(o)
+        offres_par_mag.setdefault((o.id_produit, o.id_magasin), []).append(o)
+
+    magasins_list = db.query(Magasin).all()
+    magasins_map = {m.id_magasin: m.nom_magasin for m in magasins_list}
+
+    return produits_map, offres_map, offres_par_mag, magasins_list, magasins_map
 
 
 def get_meilleure_offre(offres):
@@ -123,17 +137,17 @@ def get_scenarios():
 # =====================================================
 
 def scenario_prix_min(data, db):
+    produits_map, offres_map, _, _, magasins_map = preload_data(data, db)
+
     total = 0
     total_initial = 0
     repartition = {}
 
     for item in data.produits:
-
-        produit = get_produit(db, item.id_produit)
+        produit = produits_map.get(item.id_produit)
         if not produit:
             continue
-
-        offres = get_offres(db, item.id_produit)
+        offres = offres_map.get(item.id_produit)
         if not offres:
             continue
 
@@ -143,14 +157,13 @@ def scenario_prix_min(data, db):
         sous_total         = meilleure.prix_offre * item.quantite
         sous_total_initial = pire.prix_offre      * item.quantite
 
-        # Sauter ce produit s'il fait dépasser le budget
         if data.budget and total + sous_total > data.budget:
             continue
 
         total         += sous_total
         total_initial += sous_total_initial
 
-        magasin_nom  = get_magasin_nom(db, meilleure.id_magasin)
+        magasin_nom  = magasins_map.get(meilleure.id_magasin, "Inconnu")
         produit_resp = build_produit_response(produit, meilleure, item.quantite)
         ajouter_produit_repartition(repartition, magasin_nom, produit_resp)
 
@@ -165,11 +178,10 @@ def scenario_prix_min(data, db):
 # =====================================================
 
 def scenario_1_2_magasins(data, db):
-    magasins = db.query(Magasin).all()
+    produits_map, offres_map, offres_par_mag, magasins_list, magasins_map = preload_data(data, db)
 
-    # Génère toutes les combinaisons : 1 magasin puis paires de 2
-    candidats = [[m] for m in magasins] + [
-        list(combo) for combo in itertools_combinations(magasins, 2)
+    candidats = [[m] for m in magasins_list] + [
+        list(combo) for combo in itertools_combinations(magasins_list, 2)
     ]
 
     best_total   = float("inf")
@@ -177,48 +189,39 @@ def scenario_1_2_magasins(data, db):
     best_rep     = None
 
     for combo in candidats:
-
-        total         = 0
+        total       = 0
         total_initial = 0
-        repartition   = {}
-        valide        = True
+        repartition = {}
+        valide      = True
 
         for item in data.produits:
-
-            produit = get_produit(db, item.id_produit)
+            produit = produits_map.get(item.id_produit)
             if not produit:
                 valide = False
                 break
 
-            # Meilleure offre parmi les magasins de la combinaison
             offre_choisie = None
             for m in combo:
-                offre = db.query(Offre).filter(
-                    Offre.id_produit  == item.id_produit,
-                    Offre.id_magasin  == m.id_magasin,
-                    Offre.stock       >  0
-                ).order_by(Offre.prix_offre).first()
-
-                if offre and (offre_choisie is None or offre.prix_offre < offre_choisie.prix_offre):
-                    offre_choisie = offre
+                candidate = get_meilleure_offre_mag(offres_par_mag, item.id_produit, m.id_magasin)
+                if candidate and (offre_choisie is None or candidate.prix_offre < offre_choisie.prix_offre):
+                    offre_choisie = candidate
 
             if not offre_choisie:
                 valide = False
                 break
 
             sous_total = offre_choisie.prix_offre * item.quantite
-
             if data.budget and total + sous_total > data.budget:
                 valide = False
                 break
 
-            toutes_offres = get_offres(db, item.id_produit)
+            toutes_offres = offres_map.get(item.id_produit, [])
             pire = get_pire_offre(toutes_offres) if toutes_offres else offre_choisie
 
             total         += sous_total
             total_initial += pire.prix_offre * item.quantite
 
-            magasin_nom  = get_magasin_nom(db, offre_choisie.id_magasin)
+            magasin_nom  = magasins_map.get(offre_choisie.id_magasin, "Inconnu")
             produit_resp = build_produit_response(produit, offre_choisie, item.quantite)
             ajouter_produit_repartition(repartition, magasin_nom, produit_resp)
 
@@ -244,22 +247,18 @@ def scenario_1_2_magasins(data, db):
 # =====================================================
 
 def scenario_budget_strict(data, db):
+    produits_map, offres_map, _, _, magasins_map = preload_data(data, db)
 
     candidats = []
-
     for item in data.produits:
-
-        offres = get_offres(db, item.id_produit)
+        offres = offres_map.get(item.id_produit)
         if not offres:
             continue
-
-        meilleure = get_meilleure_offre(offres)
-        pire      = get_pire_offre(offres)
+        meilleure  = get_meilleure_offre(offres)
+        pire       = get_pire_offre(offres)
         sous_total = meilleure.prix_offre * item.quantite
-
         candidats.append((item, meilleure, pire, sous_total))
 
-    # Priorité aux produits les moins chers pour maximiser le nombre d'articles
     candidats.sort(key=lambda x: x[3])
 
     total         = 0
@@ -267,18 +266,16 @@ def scenario_budget_strict(data, db):
     repartition   = {}
 
     for item, offre, pire, sous_total in candidats:
-
         if total + sous_total > data.budget:
             continue
-
-        produit = get_produit(db, item.id_produit)
+        produit = produits_map.get(item.id_produit)
         if not produit:
             continue
 
         total         += sous_total
         total_initial += pire.prix_offre * item.quantite
 
-        magasin_nom  = get_magasin_nom(db, offre.id_magasin)
+        magasin_nom  = magasins_map.get(offre.id_magasin, "Inconnu")
         produit_resp = build_produit_response(produit, offre, item.quantite)
         ajouter_produit_repartition(repartition, magasin_nom, produit_resp)
 
@@ -299,17 +296,17 @@ def scenario_budget_strict(data, db):
 # =====================================================
 
 def scenario_recommande(data, db):
+    produits_map, offres_map, _, _, magasins_map = preload_data(data, db)
+
     total         = 0
     total_initial = 0
     repartition   = {}
 
     for item in data.produits:
-
-        produit = get_produit(db, item.id_produit)
+        produit = produits_map.get(item.id_produit)
         if not produit:
             continue
-
-        offres = get_offres(db, item.id_produit)
+        offres = offres_map.get(item.id_produit)
         if not offres:
             continue
 
@@ -319,17 +316,15 @@ def scenario_recommande(data, db):
         sous_total         = meilleure.prix_offre * item.quantite
         sous_total_initial = pire.prix_offre      * item.quantite
 
-        # Vérification stock et budget AVANT de modifier les totaux
         if meilleure.stock < item.quantite:
             continue
-
         if data.budget and total + sous_total > data.budget:
             continue
 
         total         += sous_total
         total_initial += sous_total_initial
 
-        magasin_nom  = get_magasin_nom(db, meilleure.id_magasin)
+        magasin_nom  = magasins_map.get(meilleure.id_magasin, "Inconnu")
         produit_resp = build_produit_response(produit, meilleure, item.quantite)
         ajouter_produit_repartition(repartition, magasin_nom, produit_resp)
 
@@ -390,11 +385,14 @@ def optimiser(data: OptimisationRequest, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(panier)
 
+    magasins_by_name = {
+        m.nom_magasin: m
+        for m in db.query(Magasin).all()
+    }
+
     for magasin_data in result.repartition:
 
-        magasin = db.query(Magasin).filter(
-            Magasin.nom_magasin == magasin_data.magasin
-        ).first()
+        magasin = magasins_by_name.get(magasin_data.magasin)
 
         for produit in magasin_data.produits:
 
