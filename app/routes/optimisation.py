@@ -38,11 +38,10 @@ def preload_data(data, db):
         for p in db.query(Produit).filter(Produit.id_produit.in_(ids)).all()
     }
 
-    all_offres = (
-        db.query(Offre)
-        .filter(Offre.id_produit.in_(ids), Offre.stock > 0)
-        .all()
-    )
+    q = db.query(Offre).filter(Offre.id_produit.in_(ids), Offre.stock > 0)
+    if data.magasins_preferes:
+        q = q.filter(Offre.id_magasin.in_(data.magasins_preferes))
+    all_offres = q.all()
     offres_map = {}       # id_produit → [offres]
     offres_par_mag = {}   # (id_produit, id_magasin) → [offres]
     for o in all_offres:
